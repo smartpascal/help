@@ -1,0 +1,725 @@
+<!DOCTYPE HTML>
+<html>
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <style type="text/css">
+       a {color: black; text-decoration: none }
+       a:visited {color: black;}
+	   a:hover {color: #E4641C; text-decoration: underline }
+</style>
+    <script type="text/javascript" src="js/jquery.js"></script>
+    <title></title>
+  </head>
+  <body>
+  <form style="background-color: rgb(242, 245, 250);">
+    <fieldset>
+      <input type="text" name="search" value="" id="id_search" placeholder="Type To Filter" onkeyup="filter(this)" />
+    </fieldset>
+  </form>
+  <br />
+<DIV id="filtro_mod">
+<UL id="indexList" style="list-style: none">
+<LI><DIV><a target="hmcontent" href="$a.htm">$a</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="$align.htm">$align</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="$apptype.htm">$apptype</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="$b.htm">$b</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="$booleval.htm">$booleval</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="$d.htm">$d</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="$debuginfo.htm">$debuginfo</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="$define.htm">$define</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="$definitioninfo.htm">$definitioninfo</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="$else.htm">$else</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="$endif.htm">$endif</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="$extendedsyntax.htm">$extendedsyntax</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="$h.htm">$h</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="$hints.htm">$hints</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="$i.htm">$i</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="$ifdef.htm">$ifdef</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="$ifndef.htm">$ifndef</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="$ifopt.htm">$ifopt</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="$include.htm">$include</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="$iochecks.htm">$iochecks</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="$l.htm">$l</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="$localsymbols.htm">$localsymbols</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="$longstrings.htm">$longstrings</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="$minenumsize.htm">$minenumsize</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="$o.htm">$o</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="$optimization.htm">$optimization</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="$overflowchecks.htm">$overflowchecks</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="$q.htm">$q</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="$r.htm">$r</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="$rangechecks.htm">$rangechecks</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="$referenceinfo.htm">$referenceinfo</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="$resource.htm">$resource</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="$undef.htm">$undef</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="$warnings.htm">$warnings</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="$x.htm">$x</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="$y.htm">$y</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="$z.htm">$z</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="hm_q03.htm#100doors">% eg</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="hm_programming_with_smartms.htm#ifthenelse2">?: ifthenelse</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="hm_q03.htm#100doors">100 doors</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="abort.htm">abort</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="abs.htm">abs</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="abstract.htm">abstract</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="abstracterrorproc.htm">abstracterrorproc</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="hm_q05.htm#acker">ackermann</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="addr.htm">addr</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="hm_str05.htm#p2">after example</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="hm_string.htm#str_manipulations">after str manipulation</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="and.htm">and</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="ansichar.htm">ansichar</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="ansicomparestr.htm">ansicomparestr</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="ansicomparetext.htm">ansicomparetext</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="ansicontainsstr.htm">ansicontainsstr</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="ansicontainstext.htm">ansicontainstext</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="ansiendsstr.htm">ansiendsstr</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="ansiindexstr.htm">ansiindexstr</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="ansileftstr.htm">ansileftstr</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="ansilowercase.htm">ansilowercase</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="ansimatchstr.htm">ansimatchstr</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="ansimidstr.htm">ansimidstr</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="ansipos.htm">ansipos</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="ansireplacestr.htm">ansireplacestr</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="ansireversestring.htm">ansireversestring</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="ansirightstr.htm">ansirightstr</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="ansistartsstr.htm">ansistartsstr</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="ansistring.htm">ansistring</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="ansiuppercase.htm">ansiuppercase</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="append.htm">append</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="appendstr.htm">appendstr</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="arccos.htm">arccos</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="hm_float01.htm">arccos</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="hm_float01.htm">arccosh</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="arcsin.htm">arcsin</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="hm_float01.htm">arcsin</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="hm_float01.htm">arcsinh</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="arctan.htm">arctan</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="hm_float01.htm">arctan</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="hm_float01.htm">arctanh</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="array.htm">array</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="hm_introduction.htm
+#arr_const">array constants</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="hm_looping.htm#enumset">array of enum</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="hm_q01.htm#java">array of strings</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="as.htm">as</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="hm_dates_and_times.htm#datetimes">asdatetime</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="assign.htm">assign</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="assigned.htm">assigned</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="assignfile.htm">assignfile</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="assignprn.htm">assignprn</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="hm_subroutines.htm#_mean">average</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="hm_datatypes.htm">base types</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="beep.htm">beep</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="hm_str05.htm#p2">before example</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="hm_string.htm#str_manipulations">before str manipulations</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="begin.htm">begin</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="beginthread.htm">beginthread</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="blockread.htm">blockread</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="blockwrite.htm">blockwrite</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="boolean.htm">boolean</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="bounds.htm">bounds</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="break.htm">break</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="byte.htm">byte</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="hm_datatypes.htm#typmap">byte</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="cardinal.htm">cardinal</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="hm_datatypes.htm#typmap">cardinal</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="case.htm">case</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="hm_programming_with_smartms.htm#casest">case</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="hm_float03.htm">ceiling</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="celsiustofahrenheit.htm">celsiustofahrenheit</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="changefileext.htm">changefileext</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="char.htm">char</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="hm_datatypes.htm#typmap">char</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="hm_looping.htm#charloop">character loop</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="chdir.htm">chdir</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="chr.htm">chr</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="hm_float04.htm">clamp example</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="hm_int01.htm">clamp str manipulation</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="class.htm">class</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="close.htm">close</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="closefile.htm">closefile</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="cmdline.htm">cmdline</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="comp.htm">comp</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="comparestr.htm">comparestr</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="comparetext.htm">comparetext</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="hm_str05.htm#p2">comparetext</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="hm_string.htm#str_manipulations">comparetext str manipulation</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="hm_str05.htm#p2">compareto</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="hm_string.htm#str_manipulations">compareto str manipulation</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="comparevalue.htm">comparevalue</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="concat.htm">concat</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="const.htm">const</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="hm_subroutines.htm#_co1">const</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="constructor.htm">constructor</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="hm_introduction.htm
+#constructor">constructor</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="hm_str02.htm#c13">contains</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="hm_string.htm#str_testing">contains str test</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="continue.htm">continue</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="convert.htm">convert</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="copy.htm">copy</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="cos.htm">cos</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="hm_float01.htm">cos</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="hm_float01.htm">cosh</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="hm_float01.htm">cotan</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="hm_looping.htm#forloop">count loop</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="createdir.htm">createdir</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="currency.htm">currency</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="hm_datatypes.htm#typmap">currency</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="currencydecimals.htm">currencydecimals</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="currencyformat.htm">currencyformat</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="currencystring.htm">currencystring</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="currtostr.htm">currtostr</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="currtostrf.htm">currtostrf</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="date.htm">date</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="hm_dates_and_times.htm#datetimes">date</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="dateseparator.htm">dateseparator</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="datetimetofiledate.htm">datetimetofiledate</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="hm_dates_and_times.htm#_fdt1">datetimetoiso8601</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="datetimetostr.htm">datetimetostr</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="hm_dates_and_times.htm#datetimes">datetimetostr</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="hm_dates_and_times.htm#_fdt1">datetimetostr example</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="datetimetostring.htm">datetimetostring</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="datetostr.htm">datetostr</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="hm_dates_and_times.htm#datetimes">datetostr</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="hm_dates_and_times.htm#_fdt1">datetostr example</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="hm_dates_and_times.htm#_fdt1">datetoweeknumber</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="hm_dates_and_times.htm#_fdt1">datetoyearofweek</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="hm_dates_and_times.htm#_fdt1">dayofmonth</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="dayofthemonth.htm">dayofthemonth</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="dayoftheweek.htm">dayoftheweek</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="hm_dates_and_times.htm#_fdt1">dayoftheweek</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="dayoftheyear.htm">dayoftheyear</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="dayofweek.htm">dayofweek</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="hm_dates_and_times.htm#_fdt1">dayofweek</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="hm_dates_and_times.htm#_fdt1">dayofyear</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="daysbetween.htm">daysbetween</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="daysinamonth.htm">daysinamonth</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="daysinayear.htm">daysinayear</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="dayspan.htm">dayspan</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="dec.htm">dec</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="decimalseparator.htm">decimalseparator</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="decodedate.htm">decodedate</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="decodedatetime.htm">decodedatetime</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="decodetime.htm">decodetime</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="default.htm">default</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="degtorad.htm">degtorad</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="hm_float01.htm">degtorad</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="hm_str05.htm#p2">deleteleft</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="hm_string.htm#str_manipulations">deleteleft str manipulations</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="hm_str05.htm#p2">deleteright</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="hm_string.htm#str_manipulations">deleteright str manipulations</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="destructor.htm">destructor</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="directoryexists.htm">directoryexists</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="diskfree.htm">diskfree</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="disksize.htm">disksize</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="dispose.htm">dispose</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="div.htm">div</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="hm_operators.htm#aritop">div eg</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="do.htm">do</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="double.htm">double</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="hm_datatypes.htm#typmap">double</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="downto.htm">downto</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="hm_str05.htm#p2">dupe</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="hm_string.htm#str_manipulations">dupe str manipulations</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="dupestring.htm">dupestring</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="hm_faq1.htm#dws">dwscript</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="dynamic.htm">dynamic</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="hm_exceptions.htm#_exc2">eabort</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="else.htm">else</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="hm_programming_with_smartms.htm#ifthenelse">else</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="encodedate.htm">encodedate</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="hm_dates_and_times.htm#_fdt1">encodedate</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="encodedatetime.htm">encodedatetime</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="encodetime.htm">encodetime</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="end.htm">end</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="endofaday.htm">endofaday</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="endofamonth.htm">endofamonth</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="hm_str02.htm#c13">endswith</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="hm_string.htm#str_testing">endswith str test</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="endthread.htm">endthread</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="hm_looping.htm#enumset">enumerations</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="eof.htm">eof</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="eoln.htm">eoln</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="hm_str02.htm#c13">equalstext</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="hm_string.htm#str_testing">equalstext str test</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="erase.htm">erase</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="erroraddr.htm">erroraddr</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="except.htm">except</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="hm_exceptions.htm#_exc1">except</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="hm_exceptions.htm#_exc1">exception</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="exclude.htm">exclude</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="exit.htm">exit</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="hm_q02.htm#mdc">exit ex</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="exitcode.htm">exitcode</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="exp.htm">exp</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="hm_float02.htm">exp</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="export.htm">export</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="extended.htm">extended</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="hm_datatypes.htm#typmap">extended</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="extractfiledir.htm">extractfiledir</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="extractfiledrive.htm">extractfiledrive</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="extractfileext.htm">extractfileext</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="extractfilename.htm">extractfilename</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="extractfilepath.htm">extractfilepath</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="fahrenheittocelsius.htm">fahrenheittocelsius</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="hm_int01.htm">fatorial</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="file.htm">file</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="fileage.htm">fileage</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="filedatetodatetime.htm">filedatetodatetime</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="fileexists.htm">fileexists</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="filegetattr.htm">filegetattr</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="filemode.htm">filemode</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="filepos.htm">filepos</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="filesearch.htm">filesearch</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="filesetattr.htm">filesetattr</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="filesetdate.htm">filesetdate</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="filesize.htm">filesize</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="fillchar.htm">fillchar</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="finally.htm">finally</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="hm_exceptions.htm#_exc2">finally</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="findclose.htm">findclose</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="findcmdlineswitch.htm">findcmdlineswitch</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="findfirst.htm">findfirst</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="findnext.htm">findnext</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="hm_datatypes.htm#typmap">float</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="floattostr.htm">floattostr</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="floattostrf.htm">floattostrf</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="hm_float03.htm">floor</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="flush.htm">flush</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="hm_dates_and_times.htm#_fdt1">fmtlongdaynames</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="hm_dates_and_times.htm#_fdt1">fmtlongmonthnames</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="hm_dates_and_times.htm#_fdt1">fmtshortdaynames</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="hm_dates_and_times.htm#_fdt1">fmtshortmonthnames</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="for.htm">for</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="hm_looping.htm#forloop">for loop</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="forcedirectories.htm">forcedirectories</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="format.htm">format</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="hm_str05.htm#p2">format</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="hm_operators.htm#aritop">format eg</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="hm_string.htm#str_manipulations">format str manipulations</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="formatcurr.htm">formatcurr</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="formatdatetime.htm">formatdatetime</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="hm_dates_and_times.htm#_fdt1">formatdatetime</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="formatfloat.htm">formatfloat</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="frac.htm">frac</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="hm_float03.htm">fraction</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="freeandnil.htm">freeandnil</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="freemem.htm">freemem</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="function.htm">function</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="hm_subroutines.htm#_fx01">function with paramenters</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="hm_subroutines.htm">functions</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="hm_q02.htm#mdc">gcd ex</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="getcurrentdir.htm">getcurrentdir</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="getdir.htm">getdir</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="getlasterror.htm">getlasterror</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="getlocaleformatsettings.htm">getlocaleformatsettings</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="getmem.htm">getmem</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="goto.htm">goto</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="halt.htm">halt</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="hm_str05.htm#p2">hextointeger</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="hm_string.htm#str_manipulations">hextointeger str manipulations</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="hi.htm">hi</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="high.htm">high</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="hm_str01.htm#h3">high</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="hm_string.htm#str_informations">high str info</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="if.htm">if</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="hm_programming_with_smartms.htm#ifthenelse">if</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="implementation.htm">implementation</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="in.htm">in</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="inc.htm">inc</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="incday.htm">incday</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="inchour.htm">inchour</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="include.htm">include</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="incmillisecond.htm">incmillisecond</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="incminute.htm">incminute</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="incmonth.htm">incmonth</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="incsecond.htm">incsecond</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="incyear.htm">incyear</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="indexb.htm">indexb</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="infinity.htm">infinity</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="inherited.htm">inherited</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="hm_introduction.htm
+#def_var">inline variables</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="input.htm">input</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="inputbox.htm">inputbox</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="inputquery.htm">inputquery</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="insert.htm">insert</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="int.htm">int</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="hm_float03.htm">int</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="int64.htm">int64</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="hm_datatypes.htm#typmap">int64</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="integer.htm">integer</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="interface.htm">interface</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="inttohex.htm">inttohex</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="inttostr.htm">inttostr</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="ioresult.htm">ioresult</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="is.htm">is</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="hm_float04.htm">isfinite</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="isinfinite.htm">isinfinite</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="hm_exceptions.htm#_exc2">isinfinite exceptions</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="hm_float04.htm">isinfinite topic</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="isleapyear.htm">isleapyear</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="ismultithread.htm">ismultithread</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="isnan.htm">isnan</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="hm_float04.htm">isnan</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="hm_int01.htm">isprime</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="lastdelimiter.htm">lastdelimiter</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="hm_int01.htm">leastfactor</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="hm_str05.htm#p2">left</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="hm_string.htm#str_manipulations">left str manipulations</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="hm_str05.htm#p2">leftstr</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="hm_string.htm#str_manipulations">leftstr str manipulations</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="length.htm">length</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="hm_str01.htm#h3">length</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="hm_string.htm#str_informations">length str info</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="ln.htm">ln</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="hm_float02.htm">ln</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="lo.htm">lo</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="log10.htm">log10</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="hm_float02.htm">log10</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="hm_float02.htm">log2</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="hm_float02.htm">logn</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="longdateformat.htm">longdateformat</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="longdaynames.htm">longdaynames</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="longint.htm">longint</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="longmonthnames.htm">longmonthnames</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="longtimeformat.htm">longtimeformat</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="longword.htm">longword</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="hm_looping.htm#forloop">loop</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="low.htm">low</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="hm_str01.htm#h3">low</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="hm_string.htm#str_informations">low str info</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="lowercase.htm">lowercase</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="hm_str03.htm#u7">lowercase</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="hm_string.htm#str_case_convert">lowercase case convert</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="hm_str05.htm#p2">matches</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="hm_string.htm#str_manipulations">matches str manipulations</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="max.htm">max</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="hm_float02.htm">max</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="hm_int01.htm">max topic</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="maxint.htm">maxint</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="maxlongint.htm">maxlongint</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="mean.htm">mean</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="hm_subroutines.htm#_mean">mean</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="messagedlg.htm">messagedlg</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="messagedlgpos.htm">messagedlgpos</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="hm_q02.htm#mdc">method ex</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="hm_str05.htm#p2">midstr</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="hm_string.htm#str_manipulations">midstr str manipulations</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="min.htm">min</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="hm_float02.htm">min</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="hm_int01.htm">min topic</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="minsperday.htm">minsperday</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="mkdir.htm">mkdir</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="mod.htm">mod</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="hm_q03.htm#100doors">mod example</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="hm_q02.htm#mdc">mod math</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="hm_operators.htm#aritop">mod operators</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="monthdays.htm">monthdays</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="monthoftheyear.htm">monthoftheyear</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="move.htm">move</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="nan.htm">nan</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="negcurrformat.htm">negcurrformat</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="new.htm">new</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="nil.htm">nil</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="not.htm">not</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="now.htm">now</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="hm_dates_and_times.htm#datetimes">now</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="null.htm">null</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="null .htm">null </a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="object.htm">object</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="odd.htm">odd</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="of.htm">of</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="on.htm">on</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="hm_exceptions.htm#_exc2">on exception</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="or.htm">or</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="ord.htm">ord</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="out.htm">out</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="output.htm">output</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="overload.htm">overload</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="override.htm">override</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="packed.htm">packed</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="pansichar.htm">pansichar</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="pansistring.htm">pansistring</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="paramcount.htm">paramcount</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="paramstr.htm">paramstr</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="pchar.htm">pchar</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="pcurrency.htm">pcurrency</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="pdatetime.htm">pdatetime</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="pextended.htm">pextended</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="pi.htm">pi</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="pint64.htm">pint64</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="point.htm">point</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="pointer.htm">pointer</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="pointsequal.htm">pointsequal</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="pos.htm">pos</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="hm_float02.htm">power</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="hm_operators.htm#aritop">power eg</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="pred.htm">pred</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="printer.htm">printer</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="private.htm">private</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="procedure.htm">procedure</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="hm_subroutines.htm#_pr1">procedure with different parameters</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="hm_subroutines.htm">procedures</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="processpath.htm">processpath</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="program.htm">program</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="promptforfilename.htm">promptforfilename</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="property.htm">property</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="protected.htm">protected</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="pshortstring.htm">pshortstring</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="pstring.htm">pstring</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="ptinrect.htm">ptinrect</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="public.htm">public</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="hm_q01.htm#java">public static void main</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="published.htm">published</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="hm_q03.htm#100doors">push math</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="pvariant.htm">pvariant</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="pwidechar.htm">pwidechar</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="pwidestring.htm">pwidestring</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="hm_str05.htm#p2">quotedstring</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="hm_string.htm#str_manipulations">quotedstring str manipulations</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="radtodeg.htm">radtodeg</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="hm_float01.htm">radtodeg</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="raise.htm">raise</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="hm_exceptions.htm#_exc1">raise</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="random.htm">random</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="randomize.htm">randomize</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="randomrange.htm">randomrange</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="randomseed.htm">randomseed</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="randseed.htm">randseed</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="read.htm">read</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="readln.htm">readln</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="real.htm">real</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="hm_datatypes.htm#typmap">real</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="real48.htm">real48</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="reallocmem.htm">reallocmem</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="recodedate.htm">recodedate</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="recodetime.htm">recodetime</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="record.htm">record</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="rect.htm">rect</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="hm_q05.htm#acker">recursive function</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="removedir.htm">removedir</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="rename.htm">rename</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="renamefile.htm">renamefile</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="repeat.htm">repeat</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="hm_looping.htm#repeatloop">repeat loop</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="hm_str05.htm#p2">replace</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="hm_string.htm#str_manipulations">replace str manipulations</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="replacedate.htm">replacedate</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="replacetime.htm">replacetime</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="reset.htm">reset</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="result.htm">result</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="hm_str05.htm#p2">reverse</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="hm_string.htm#str_manipulations">reverse str manipulations</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="rewrite.htm">rewrite</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="hm_str05.htm#p2">right</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="hm_string.htm#str_manipulations">right str manipulations</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="hm_str05.htm#p2">rigthstr</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="hm_string.htm#str_manipulations">rigthstr str manipulations</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="rmdir.htm">rmdir</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="round.htm">round</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="hm_float03.htm">round</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="runerror.htm">runerror</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="secsperday.htm">secsperday</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="seek.htm">seek</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="seekeof.htm">seekeof</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="seekeoln.htm">seekeoln</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="selectdirectory.htm">selectdirectory</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="self.htm">self</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="set.htm">set</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="hm_looping.htm#enumset">set</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="setcurrentdir.htm">setcurrentdir</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="setlength.htm">setlength</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="setstring.htm">setstring</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="shl.htm">shl</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="shortdateformat.htm">shortdateformat</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="shortdaynames.htm">shortdaynames</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="shortint.htm">shortint</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="shortmonthnames.htm">shortmonthnames</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="hm_dates_and_times.htm#_fdt1">shortmonthnames</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="shortstring.htm">shortstring</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="shorttimeformat.htm">shorttimeformat</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="showmessage.htm">showmessage</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="showmessagefmt.htm">showmessagefmt</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="showmessagepos.htm">showmessagepos</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="shr.htm">shr</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="hm_float04.htm">sign</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="hm_int01.htm">sign example</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="sin.htm">sin</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="hm_float01.htm">sin</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="single.htm">single</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="hm_float01.htm">sinh</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="sizeof.htm">sizeof</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="slice.htm">slice</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="smallint.htm">smallint</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="hm_str05.htm#p1">split</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="hm_string.htm#str_manipulations">split str manipulations</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="sqr.htm">sqr</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="hm_float02.htm">sqr</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="hm_int01.htm">sqr example</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="sqrt.htm">sqrt</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="hm_float02.htm">sqrt</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="hm_str02.htm#c13">startswith</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="hm_string.htm#str_testing">startswith str test</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="hm_q01.htm#java">static method example</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="str.htm">str</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="hm_string.htm#str_conversion">str convert</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="string.htm">string</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="stringofchar.htm">stringofchar</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="stringreplace.htm">stringreplace</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="stringtowidechar.htm">stringtowidechar</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="strscan.htm">strscan</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="strtocurr.htm">strtocurr</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="strtodate.htm">strtodate</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="strtodatetime.htm">strtodatetime</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="strtofloat.htm">strtofloat</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="strtoint.htm">strtoint</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="strtoint64.htm">strtoint64</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="strtoint64def.htm">strtoint64def</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="strtointdef.htm">strtointdef</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="hm_q04.htm#ab">strtointdef eg</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="hm_q06.htm#ab">strtointdef example2</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="strtotime.htm">strtotime</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="stuffstring.htm">stuffstring</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="succ.htm">succ</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="sum.htm">sum</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="tan.htm">tan</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="hm_float01.htm">tan</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="hm_float01.htm">tanh</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="tbits.htm">tbits</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="hm_datatypes.htm#typmap">tcolor</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="tconvfamily.htm">tconvfamily</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="tconvtype.htm">tconvtype</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="tdatetime.htm">tdatetime</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="hm_datatypes.htm#typmap">tdatetime</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="text.htm">text</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="textfile.htm">textfile</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="tfloatformat.htm">tfloatformat</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="tformatsettings.htm">tformatsettings</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="hm_datatypes.htm#typmap">thandle</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="then.htm">then</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="hm_programming_with_smartms.htm#ifthenelse">then</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="thousandseparator.htm">thousandseparator</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="threadvar.htm">threadvar</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="time.htm">time</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="hm_dates_and_times.htm#datetimes">time</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="timeamstring.htm">timeamstring</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="timepmstring.htm">timepmstring</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="timeseparator.htm">timeseparator</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="timetostr.htm">timetostr</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="hm_dates_and_times.htm#datetimes">timetostr</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="timetostring.htm">timetostring</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="hm_datatypes.htm#typmap">tintegerdynarray</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="tlist.htm">tlist</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="to.htm">to</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="hm_int02.htm#int_02">tobin</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="tobject.htm">tobject</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="hm_tobject.htm
+#tobject">tobject</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="hm_datatypes.htm#typmap">tobjectlist</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="hm_str04.htm#t13">toboolean</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="hm_string.htm#str_conversion">toboolean str convert</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="hm_str04.htm#t14">tofloat</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="hm_string.htm#str_conversion">tofloat str convert</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="hm_str04.htm#t14">tofloatdef</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="hm_string.htm#str_conversion">tofloatdef str convert</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="hm_int02.htm#int_02">tohexstring</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="hm_str04.htm#t16">tointeger</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="hm_str04.htm#t16">tointegerdef</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="hm_string.htm#str_conversion">tointegerdef</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="hm_str03.htm#u7">tolower</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="hm_string.htm#str_case_convert">tolower</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="tomorrow.htm">tomorrow</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="topendialog.htm">topendialog</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="hm_int02.htm#int_02">tostring</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="hm_float04.htm">tostring (float)</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="hm_int01.htm">tostring (integer)</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="hm_str03.htm#u7">toupper</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="hm_string.htm#str_case_convert">toupper</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="hm_datatypes.htm#typmap">tpersistent</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="tpoint.htm">tpoint</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="tprintdialog.htm">tprintdialog</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="trect.htm">trect</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="treplaceflags.htm">treplaceflags</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="trim.htm">trim</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="hm_str05.htm#p1">trim</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="hm_string.htm#str_manipulations">trim str manipulations</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="trimleft.htm">trimleft</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="hm_str05.htm#p1">trimleft</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="hm_string.htm#str_manipulations">trimleft</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="trimright.htm">trimright</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="hm_str05.htm#p1">trimrigth</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="hm_string.htm#str_manipulations">trimrigth</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="trunc.htm">trunc</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="hm_operators.htm#aritop">trunc eg</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="truncate.htm">truncate</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="hm_float03.htm">truncate</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="try.htm">try</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="hm_exceptions.htm#_exc1">try</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="tsavedialog.htm">tsavedialog</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="tsearchrec.htm">tsearchrec</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="tstringlist.htm">tstringlist</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="hm_datatypes.htm#typmap">tstringlist</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="tsyscharset.htm">tsyscharset</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="tthreadfunc.htm">tthreadfunc</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="hm_datatypes.htm#typmap">tvariantdynarray</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="hm_dates_and_times.htm#datrege">tw3regex</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="twodigityearcenturywindow.htm">twodigityearcenturywindow</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="type.htm">type</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="hm_datatypes.htm">type mappings</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="unit.htm">unit</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="hm_int01.htm">unsigned32</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="until.htm">until</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="hm_looping.htm#repeatloop">until</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="upcase.htm">upcase</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="uppercase.htm">uppercase</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="hm_str03.htm#u7">uppercase</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="hm_string.htm#str_case_convert">uppercase str convert</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="uses.htm">uses</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="val.htm">val</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="var.htm">var</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="hm_subroutines.htm#_co1">var</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="hm_subroutines.htm#_va2">variable by reference</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="hm_subroutines.htm#_va1">variable by value</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="variant.htm">variant</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="vartype.htm">vartype</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="vartypemask.htm">vartypemask</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="virtual.htm">virtual</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="hm_tobject.htm
+#tobject">vmt (virtual method table)</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="hm_q04.htm#ab">w3_prompt</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="while.htm">while</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="hm_looping.htm#whileloop">while loop</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="widechar.htm">widechar</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="widechartostring.htm">widechartostring</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="widestring.htm">widestring</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="with.htm">with</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="word.htm">word</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="hm_datatypes.htm#typmap">word</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="wraptext.htm">wraptext</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="write.htm">write</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="writeln.htm">writeln</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="xor.htm">xor</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="yesterday.htm">yesterday</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="hm_exceptions.htm#_exc2">zero divide</a></DIV></LI>
+</UL> 
+</DIV>	
+<script type="text/javascript">
+function filter(element) {
+    var value = $(element).val().toUpperCase();
+
+    $("#filtro_mod > ul > li").each(function() {
+      if ($(this).text().toUpperCase().search(value) > -1) {
+          $(this).show();
+      }
+      else {
+           $(this).hide();
+      }
+    });
+}  
+</script>
+
+</body>
+</html>
