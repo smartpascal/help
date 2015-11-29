@@ -50,7 +50,7 @@ width: 100%;background: #e18728;font-family: 'PT Serif', serif;padding: 5px 0;te
 <table style="width:100%;border:none;margin:0px;" cellspacing="0" cellpadding="0"> 
   <tr>
     <td class="topichead" style="text-align:left;">
-      <h1 class="p_Heading1" style="page-break-after: avoid;"><span class="f_Heading1">Pascal To Javascript</span></h1>
+      <h1 class="p_Heading1" style="page-break-after: avoid;"><span class="f_Heading1">Array parameter expressions</span></h1>
     </td>
     <td class="topichead" id="idnav">
       <a href="hm_pas2js015.htm"><span class="hmbtnprev"></span></a>
@@ -66,22 +66,56 @@ width: 100%;background: #e18728;font-family: 'PT Serif', serif;padding: 5px 0;te
 <table style="width:100%;border:none;margin:10px;" cellspacing="0" cellpadding="0">
   <tr>
 	<td>
-	
-	{ Description here...}
+	Array parameter expressions
 	</td>
   </tr>
 </table>
 	
 <pre><span id="code" class="language-css">Smart pascal source code</span><br>
 <code class="delphi" style="background-color: #FFFEEB;">
-{paste PASCAL code here...}
+{ unit1.pas }
+
+var
+  a : array of Float := [0];
+  x := 1.5;
+  s : array of string;
+
+begin
+  a.Add(x * 2);
+  Writeln(a.IndexOf(x * 2));
+  a.Insert(1, x * 4);
+  a.Remove(x * 2);
+  s := a.Map(FloatToStr);
+  Writeln(s.Join(';'));
+
+{ CONSOLE OUTPUT
+  1
+  0;6
+}
 
 </code></pre>
 <button type="button" id="checkoutbutton">Show JS code</button>
 <div id="widget" style="display:none;">
 <pre>
 <code class="javascript">
-{paste JS code here...}
+function FloatToStr$_Float_(i) { return i.toString() }
+function FloatToStr$_Float_Integer_(i,p) { return (p==99)?i.toString():i.toFixed(p) }
+function $Remove(a,i,f) {
+	var j = a.indexOf(i,f);
+	if (j>=0) a.splice(j,1);
+}
+
+      var a = [],
+         a = [0].slice();
+      var x$1 = 1.5;
+      var s = [];
+      a.push(x$1*2);
+      WriteLn(a.indexOf(x$1*2));
+      a.splice(1,0,x$1*4);
+      $Remove(a,x$1*2,0);
+      s = a.map(FloatToStr$_Float_);
+      WriteLn((s).join(";"));
+
 
 </code></pre></div>
 </div>

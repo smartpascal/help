@@ -50,7 +50,7 @@ width: 100%;background: #e18728;font-family: 'PT Serif', serif;padding: 5px 0;te
 <table style="width:100%;border:none;margin:0px;" cellspacing="0" cellpadding="0"> 
   <tr>
     <td class="topichead" style="text-align:left;">
-      <h1 class="p_Heading1" style="page-break-after: avoid;"><span class="f_Heading1">Pascal To Javascript</span></h1>
+      <h1 class="p_Heading1" style="page-break-after: avoid;"><span class="f_Heading1">Binary literal</span></h1>
     </td>
     <td class="topichead" id="idnav">
       <a href="hm_pas2js015.htm"><span class="hmbtnprev"></span></a>
@@ -66,22 +66,45 @@ width: 100%;background: #e18728;font-family: 'PT Serif', serif;padding: 5px 0;te
 <table style="width:100%;border:none;margin:10px;" cellspacing="0" cellpadding="0">
   <tr>
 	<td>
-	
-	{ Description here...}
+	Binary literal 
 	</td>
   </tr>
 </table>
 	
 <pre><span id="code" class="language-css">Smart pascal source code</span><br>
 <code class="delphi" style="background-color: #FFFEEB;">
-{paste PASCAL code here...}
+var
+  i: Integer;
+
+BEGIN
+  Writeln(0b0);  // 0
+
+  Writeln(0B1); // 1
+  Writeln(0b10);  // 2
+  Writeln(0xa);  // 10
+
+  i := 0b1110;  
+  Writeln(i and 0b11);  // 2
+  Writeln(0b0111 and i);  // 6
+  Writeln(0b0111 and 0x4);  // 4
+
+  Writeln(0b_101_111);  // 45
+  Writeln(0b101_101);  // 47
 
 </code></pre>
 <button type="button" id="checkoutbutton">Show JS code</button>
 <div id="widget" style="display:none;">
 <pre>
 <code class="javascript">
-{paste JS code here...}
+      var i = 0;
+      WriteLn(0);
+      WriteLn(1);
+      WriteLn(2);
+      WriteLn(10);
+      i = 14;
+      WriteLn((i&3));
+      WriteLn((7&i));
+      WriteLn(4);
 
 </code></pre></div>
 </div>

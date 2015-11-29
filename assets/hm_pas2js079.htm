@@ -50,7 +50,7 @@ width: 100%;background: #e18728;font-family: 'PT Serif', serif;padding: 5px 0;te
 <table style="width:100%;border:none;margin:0px;" cellspacing="0" cellpadding="0"> 
   <tr>
     <td class="topichead" style="text-align:left;">
-      <h1 class="p_Heading1" style="page-break-after: avoid;"><span class="f_Heading1">Pascal To Javascript</span></h1>
+      <h1 class="p_Heading1" style="page-break-after: avoid;"><span class="f_Heading1">Class initialization</span></h1>
     </td>
     <td class="topichead" id="idnav">
       <a href="hm_pas2js015.htm"><span class="hmbtnprev"></span></a>
@@ -66,22 +66,104 @@ width: 100%;background: #e18728;font-family: 'PT Serif', serif;padding: 5px 0;te
 <table style="width:100%;border:none;margin:10px;" cellspacing="0" cellpadding="0">
   <tr>
 	<td>
-	
-	{ Description here...}
+	Class initialization
 	</td>
   </tr>
 </table>
 	
 <pre><span id="code" class="language-css">Smart pascal source code</span><br>
 <code class="delphi" style="background-color: #FFFEEB;">
-{paste PASCAL code here...}
+type
+TBase = class
+    F := 123;
+    A := [1, 2, 3];
+    procedure P; virtual;
+    begin
+      Writeln(F);
+      Writeln(A.Length);
+      Writeln(A[0]);
+      Writeln(A[1]);
+      Writeln(A[2]);
+    end;
+end;
+
+type
+TChild = class(TBase)
+  B = 4.5;
+  procedure P; override;
+  begin
+    inherited P;
+    Writeln(B);
+  end;
+end;
+
+{ unit1.pas }
+
+var
+  b := TBase.Create;
+  c := TChild.Create;
+Begin
+  b.P;
+  c.P;
+
+{ ### CONSOLE OUTPUTS ###
+  123
+  3 1 2 3
+  123
+  3 1 2 3
+  4.5
+}
 
 </code></pre>
 <button type="button" id="checkoutbutton">Show JS code</button>
 <div id="widget" style="display:none;">
 <pre>
 <code class="javascript">
-{paste JS code here...}
+      var b = null,
+         b = TObject.Create($New(TBase));
+      var c = null,
+         c = TObject.Create($New(TChild));
+      TBase.P$(b);
+      TBase.P$(c);
+
+/// TBase = class (TObject)
+///  [line: 72, column: 1, file: uMain]
+var TBase = {
+   $ClassName:"TBase",$Parent:TObject
+   ,$Init:function ($) {
+      TObject.$Init($);
+      $.F = 123;
+      $.A$1 = [1,2,3];
+   }
+   /// procedure TBase.P()
+   ///  [line: 75, column: 15, file: uMain]
+   ,P:function(Self) {
+      WriteLn(Self.F);
+      WriteLn(3);
+      WriteLn(Self.A$1[0]);
+      WriteLn(Self.A$1[1]);
+      WriteLn(Self.A$1[2]);
+   }
+   ,Destroy:TObject.Destroy
+   ,P$:function($){return $.ClassType.P($)}
+};
+/// TChild = class (TBase)
+///  [line: 86, column: 1, file: uMain]
+var TChild = {
+   $ClassName:"TChild",$Parent:TBase
+   ,$Init:function ($) {
+      TBase.$Init($);
+      $.B = 4.5;
+   }
+   /// procedure TChild.P()
+   ///  [line: 88, column: 13, file: uMain]
+   ,P:function(Self) {
+      TBase.P(Self);
+      WriteLn(Self.B);
+   }
+   ,Destroy:TObject.Destroy
+   ,P$:function($){return $.ClassType.P($)}
+};	  
 
 </code></pre></div>
 </div>

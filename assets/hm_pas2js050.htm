@@ -50,7 +50,7 @@ width: 100%;background: #e18728;font-family: 'PT Serif', serif;padding: 5px 0;te
 <table style="width:100%;border:none;margin:0px;" cellspacing="0" cellpadding="0"> 
   <tr>
     <td class="topichead" style="text-align:left;">
-      <h1 class="p_Heading1" style="page-break-after: avoid;"><span class="f_Heading1">Pascal To Javascript</span></h1>
+      <h1 class="p_Heading1" style="page-break-after: avoid;"><span class="f_Heading1">Pass static array as parameter</span></h1>
     </td>
     <td class="topichead" id="idnav">
       <a href="hm_pas2js015.htm"><span class="hmbtnprev"></span></a>
@@ -66,23 +66,77 @@ width: 100%;background: #e18728;font-family: 'PT Serif', serif;padding: 5px 0;te
 <table style="width:100%;border:none;margin:10px;" cellspacing="0" cellpadding="0">
   <tr>
 	<td>
-	
-	{ Description here...}
+   Pass Static array parameter
 	</td>
   </tr>
 </table>
 	
 <pre><span id="code" class="language-css">Smart pascal source code</span><br>
 <code class="delphi" style="background-color: #FFFEEB;">
-{paste PASCAL code here...}
+type
+  TArr = array [1..2] of Integer;
+
+procedure Test(p: TArr);
+var
+  i: Integer;
+begin
+  i := 123;
+  Writeln('= ' + IntToStr(p[1]) + ', ' + IntToStr(p[2]));
+  Assert(i = 123);
+  Assert(p[2] > 0);
+end;
+
+{ unit1.pas }
+
+const
+  c: TArr = [1, 2];
+var
+  v1: TArr = [3, 4];
+  v2: TArr;
+Begin
+  v2 := [5, 6];
+
+  Test(c);       // = 1, 2
+  Test(v1);      // = 3, 4
+  Test(v2);      // = 5, 6
+  Test([7, 8]);  // = 7, 8
 
 </code></pre>
 <button type="button" id="checkoutbutton">Show JS code</button>
 <div id="widget" style="display:none;">
 <pre>
 <code class="javascript">
-{paste JS code here...}
+var Exception={
+	$ClassName: "Exception",
+	$Parent: TObject,
+	$Init: function () { FMessage="" },
+	Create: function (s,Msg) { s.FMessage=Msg; return s }
+}
+var EAssertionFailed={
+	$ClassName: "EAssertionFailed",
+	$Parent: Exception,
+	$Init: Exception.$Init
+}
 
+function $Assert(b,m,z) { if (!b) throw Exception.Create($New(EAssertionFailed),"Assertion failed"+z+((m=="")?"":" : ")+m); }
+
+      var v1 = [0,0],
+         v1 = [3, 4];
+      var v2 = [0,0];
+      var c = [1,2];
+      v2 = [5, 6];
+      Test(c);
+      Test(v1.slice(0));
+      Test(v2.slice(0));
+      Test([7, 8]);
+
+function Test(p) {
+   var i = 0;
+   i = 123;
+   WriteLn(("= "+(p[(1)-1]).toString()+", "+(p[(2)-1]).toString()));
+   $Assert(i==123,"","");
+   $Assert(p[(2)-1]>0,"","");
+};	  
 </code></pre></div>
 </div>
 </body>

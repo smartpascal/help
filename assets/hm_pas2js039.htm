@@ -50,7 +50,7 @@ width: 100%;background: #e18728;font-family: 'PT Serif', serif;padding: 5px 0;te
 <table style="width:100%;border:none;margin:0px;" cellspacing="0" cellpadding="0"> 
   <tr>
     <td class="topichead" style="text-align:left;">
-      <h1 class="p_Heading1" style="page-break-after: avoid;"><span class="f_Heading1">Pascal To Javascript</span></h1>
+      <h1 class="p_Heading1" style="page-break-after: avoid;"><span class="f_Heading1">Array of Record Type</span></h1>
     </td>
     <td class="topichead" id="idnav">
       <a href="hm_pas2js015.htm"><span class="hmbtnprev"></span></a>
@@ -66,22 +66,91 @@ width: 100%;background: #e18728;font-family: 'PT Serif', serif;padding: 5px 0;te
 <table style="width:100%;border:none;margin:10px;" cellspacing="0" cellpadding="0">
   <tr>
 	<td>
-	
-	{ Description here...}
+	Using array of TRec
 	</td>
   </tr>
 </table>
 	
 <pre><span id="code" class="language-css">Smart pascal source code</span><br>
 <code class="delphi" style="background-color: #FFFEEB;">
-{paste PASCAL code here...}
+type
+  TRec = record
+    Field: Integer
+  end;
+
+procedure WriteLnArray(a: array of TRec);
+var
+  i: Integer;
+begin
+  Writeln(IntToStr(Length(a)) + ':{');
+  for i := 0 to High(a) do
+  begin
+    if i > 0 then
+      Writeln(',');
+    Writeln(IntToStr(a[i].Field));
+  end;
+  Writeln('}');
+end;
+
+{ TApplication }
+procedure TApplication.RunApp;
+var
+  r: TRec;
+  a: array of TRec;
+begin
+  a.Add(r);
+  r.Field := 1;
+  a.Add(r);
+  r.Field := -1;
+  a.Insert(0, r);
+  WriteLnArray(a);  //   3:{-1,0,1}
+
+  r.Field := 123;
+  WriteLnArray(a);  //   3:{-1,0,1}
+
+  a.Delete(1);
+  WriteLnArray(a);  //   2:{-1,1}
 
 </code></pre>
 <button type="button" id="checkoutbutton">Show JS code</button>
 <div id="widget" style="display:none;">
 <pre>
 <code class="javascript">
-{paste JS code here...}
+      var r = {Field:0};
+      var a = [];
+      a.push(Clone$TRec(r));
+      r.Field = 1;
+      a.push(Clone$TRec(r));
+      r.Field = -1;
+      a.splice(0,0,Clone$TRec(r));
+      WriteLnArray(a);
+      r.Field = 123;
+      WriteLnArray(a);
+      a.splice(1,1);
+      WriteLnArray(a);
+	  
+function WriteLnArray(a$1) {
+   var i = 0;
+   WriteLn(((a$1.length).toString()+":{"));
+   var $temp1;
+   for(i=0,$temp1=a$1.length;i<$temp1;i++) {
+      if (i>0) {
+         WriteLn(",");
+      }
+      WriteLn((a$1[i].Field).toString());
+   }
+   WriteLn("}");
+};
+
+function Copy$TRec(s,d) {
+   d.Field=s.Field;
+   return d;
+}
+function Clone$TRec($) {
+   return {
+      Field:$.Field
+   }
+}  
 
 </code></pre></div>
 </div>

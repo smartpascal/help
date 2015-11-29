@@ -50,7 +50,7 @@ width: 100%;background: #e18728;font-family: 'PT Serif', serif;padding: 5px 0;te
 <table style="width:100%;border:none;margin:0px;" cellspacing="0" cellpadding="0"> 
   <tr>
     <td class="topichead" style="text-align:left;">
-      <h1 class="p_Heading1" style="page-break-after: avoid;"><span class="f_Heading1">Pascal To Javascript</span></h1>
+      <h1 class="p_Heading1" style="page-break-after: avoid;"><span class="f_Heading1">Class cast</span></h1>
     </td>
     <td class="topichead" id="idnav">
       <a href="hm_pas2js015.htm"><span class="hmbtnprev"></span></a>
@@ -66,22 +66,130 @@ width: 100%;background: #e18728;font-family: 'PT Serif', serif;padding: 5px 0;te
 <table style="width:100%;border:none;margin:10px;" cellspacing="0" cellpadding="0">
   <tr>
 	<td>
-	
-	{ Description here...}
+	Class cast
 	</td>
   </tr>
 </table>
 	
 <pre><span id="code" class="language-css">Smart pascal source code</span><br>
 <code class="delphi" style="background-color: #FFFEEB;">
-{paste PASCAL code here...}
+type
+  TBase = class
+end;
 
+type
+  TChild = class(TBase)
+end;
+
+{ main.pas }
+var
+  o := TObject.Create;
+  c := TChild.Create;
+
+Begin
+  Writeln(TObject(o).ClassName);
+  Writeln(TObject(c).ClassName);
+
+  Writeln((o as TObject).ClassName);
+  Writeln((c as TObject).ClassName);
+
+  try   
+    Writeln(TChild(c).ClassName);
+    Writeln(TChild(o).ClassName);
+  except   
+   on E: Exception do
+    Writeln(E.Message);
+  end;
+
+  try   
+    Writeln((c as TChild).ClassName);
+    Writeln((o as TChild).ClassName);
+  except   
+    on E: Exception do
+    Writeln(E.Message);
+  end;
+
+{ ### CONSOLE OUTPUTS ###
+  TObject
+  TChild
+  TObject
+  TChild
+  TChild
+  Cannot cast instance of type "TObject" to class "TChild"
+  TChild
+  Cannot cast instance of type "TObject" to class "TChild"
+
+}
 </code></pre>
 <button type="button" id="checkoutbutton">Show JS code</button>
 <div id="widget" style="display:none;">
 <pre>
 <code class="javascript">
-{paste JS code here...}
+var Exception={
+	$ClassName: "Exception",
+	$Parent: TObject,
+	$Init: function () { FMessage="" },
+	Create: function (s,Msg) { s.FMessage=Msg; return s }
+}
+function $W(e) { return e.ClassType?e:Exception.Create($New(Exception),e.constructor.name+", "+e.message) }
+function $ToClassType(o) {
+	if (o===null) return o;
+	return o.ClassType
+};
+function $New(c) { var i={ClassType:c}; c.$Init(i); return i }
+function $Is(o,c) {
+	if (o===null) return false;
+	return $Inh(o.ClassType,c);
+};
+function $Inh(s,c) {
+	if (s===null) return false;
+	while ((s)&&(s!==c)) s=s.$Parent;
+	return (s)?true:false;
+};
+function $As(o,c) {
+	if ((o===null)||$Is(o,c)) return o;
+	throw Exception.Create($New(Exception),"Cannot cast instance of type \""+o.ClassType.$ClassName+"\" to class \""+c.$ClassName+"\"");
+}
+      var o = null,
+         o = TObject.Create($New(TObject));
+      var c = null,
+         c = TObject.Create($New(TChild));
+      WriteLn(ClassName$1($ToClassType(o)));
+      WriteLn(ClassName$1($ToClassType(c)));
+      WriteLn(ClassName$1($ToClassType(o)));
+      WriteLn(ClassName$1($ToClassType(c)));
+      try {
+         WriteLn(ClassName$1($ToClassType(c)));
+         WriteLn(ClassName$1($ToClassType($As(o,TChild))));
+      } catch ($e) {
+         var E = $W($e);
+         WriteLn(E.FMessage)      }
+      try {
+         WriteLn(ClassName$1($ToClassType(c)));
+         WriteLn(ClassName$1($ToClassType($As(o,TChild))));
+      } catch ($e) {
+         var E$1 = $W($e);
+         WriteLn(E$1.FMessage)      }
+   }
+
+/// TBase = class (TObject)
+///  [line: 72, column: 3, file: uMain]
+var TBase = {
+   $ClassName:"TBase",$Parent:TObject
+   ,$Init:function ($) {
+      TObject.$Init($);
+   }
+   ,Destroy:TObject.Destroy
+};
+/// TChild = class (TBase)
+///  [line: 76, column: 3, file: uMain]
+var TChild = {
+   $ClassName:"TChild",$Parent:TBase
+   ,$Init:function ($) {
+      TBase.$Init($);
+   }
+   ,Destroy:TObject.Destroy
+};   
 
 </code></pre></div>
 </div>

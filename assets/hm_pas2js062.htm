@@ -50,7 +50,7 @@ width: 100%;background: #e18728;font-family: 'PT Serif', serif;padding: 5px 0;te
 <table style="width:100%;border:none;margin:0px;" cellspacing="0" cellpadding="0"> 
   <tr>
     <td class="topichead" style="text-align:left;">
-      <h1 class="p_Heading1" style="page-break-after: avoid;"><span class="f_Heading1">Pascal To Javascript</span></h1>
+      <h1 class="p_Heading1" style="page-break-after: avoid;"><span class="f_Heading1">array [Boolean] of Integer/String</span></h1>
     </td>
     <td class="topichead" id="idnav">
       <a href="hm_pas2js015.htm"><span class="hmbtnprev"></span></a>
@@ -66,22 +66,46 @@ width: 100%;background: #e18728;font-family: 'PT Serif', serif;padding: 5px 0;te
 <table style="width:100%;border:none;margin:10px;" cellspacing="0" cellpadding="0">
   <tr>
 	<td>
-	
-	{ Description here...}
+	array [Boolean] of Integer/String
 	</td>
   </tr>
 </table>
 	
 <pre><span id="code" class="language-css">Smart pascal source code</span><br>
 <code class="delphi" style="background-color: #FFFEEB;">
-{paste PASCAL code here...}
+const
+  s: array [Boolean] of string = ['F', 'T'];
+var
+  b: array [Boolean] of Integer;
+  v: boolean;
+
+BEGIN
+  b[false] := 10;
+  b[true] := 20;
+
+  v := false;
+
+  Writeln(b[1 = 1]);  // 20
+  Writeln(b[v]);      // 10
+
+  Writeln(s[v]);      // F
+  Writeln(s[not v]);  // T
 
 </code></pre>
 <button type="button" id="checkoutbutton">Show JS code</button>
 <div id="widget" style="display:none;">
 <pre>
 <code class="javascript">
-{paste JS code here...}
+      var b = [0,0],
+         v = false;
+      var s = ["F","T"];
+      b[false?1:0] = 10;
+      b[true?1:0] = 20;
+      v = false;
+      WriteLn(b[(1==1)?1:0]);
+      WriteLn(b[v?1:0]);
+      WriteLn(s[v?1:0]);
+      WriteLn(s[(!v)?1:0]);
 
 </code></pre></div>
 </div>

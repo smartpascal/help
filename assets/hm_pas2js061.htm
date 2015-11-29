@@ -50,7 +50,7 @@ width: 100%;background: #e18728;font-family: 'PT Serif', serif;padding: 5px 0;te
 <table style="width:100%;border:none;margin:0px;" cellspacing="0" cellpadding="0"> 
   <tr>
     <td class="topichead" style="text-align:left;">
-      <h1 class="p_Heading1" style="page-break-after: avoid;"><span class="f_Heading1">Pascal To Javascript</span></h1>
+      <h1 class="p_Heading1" style="page-break-after: avoid;"><span class="f_Heading1">Boolean with AND |&&</span></h1>
     </td>
     <td class="topichead" id="idnav">
       <a href="hm_pas2js015.htm"><span class="hmbtnprev"></span></a>
@@ -66,22 +66,67 @@ width: 100%;background: #e18728;font-family: 'PT Serif', serif;padding: 5px 0;te
 <table style="width:100%;border:none;margin:10px;" cellspacing="0" cellpadding="0">
   <tr>
 	<td>
-	
-	{ Description here...}
+	Testing boolean with AND operator (aka &&)
 	</td>
   </tr>
 </table>
 	
 <pre><span id="code" class="language-css">Smart pascal source code</span><br>
 <code class="delphi" style="background-color: #FFFEEB;">
-{paste PASCAL code here...}
+var
+  i: Integer;
+  b: Boolean := true;
+
+BEGIN
+{ BOOLEAN with AND }
+
+  Writeln(b and b);
+  Writeln(b and true);
+  Writeln(b and false);
+  Writeln(true and b);
+  Writeln(false and b);
+
+  b := false;
+
+  Writeln(b and b);
+  Writeln(b and true);
+  Writeln(b and false);
+  Writeln(true and b);
+  Writeln(false and b);
+
+{ CONSOLE OUTPUTS
+
+  True
+  True
+  False
+  True
+  False
+  False
+  False
+  False
+  False
+  False
+
+}
 
 </code></pre>
 <button type="button" id="checkoutbutton">Show JS code</button>
 <div id="widget" style="display:none;">
 <pre>
 <code class="javascript">
-{paste JS code here...}
+      var i = 0;
+      var b = true;
+      WriteLn((b&&b));
+      WriteLn(b);
+      WriteLn(false);
+      WriteLn(b);
+      WriteLn(false);
+      b = false;
+      WriteLn((b&&b));
+      WriteLn(b);
+      WriteLn(false);
+      WriteLn(b);
+      WriteLn(false);
 
 </code></pre></div>
 </div>

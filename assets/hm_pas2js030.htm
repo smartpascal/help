@@ -50,7 +50,7 @@ width: 100%;background: #e18728;font-family: 'PT Serif', serif;padding: 5px 0;te
 <table style="width:100%;border:none;margin:0px;" cellspacing="0" cellpadding="0"> 
   <tr>
     <td class="topichead" style="text-align:left;">
-      <h1 class="p_Heading1" style="page-break-after: avoid;"><span class="f_Heading1">Pascal To Javascript</span></h1>
+      <h1 class="p_Heading1" style="page-break-after: avoid;"><span class="f_Heading1">The indexOf() with Record Type</span></h1>
     </td>
     <td class="topichead" id="idnav">
       <a href="hm_pas2js015.htm"><span class="hmbtnprev"></span></a>
@@ -66,22 +66,111 @@ width: 100%;background: #e18728;font-family: 'PT Serif', serif;padding: 5px 0;te
 <table style="width:100%;border:none;margin:10px;" cellspacing="0" cellpadding="0">
   <tr>
 	<td>
-	
-	{ Description here...}
+	Understanding IndexOf method with Record Type
 	</td>
   </tr>
 </table>
 	
 <pre><span id="code" class="language-css">Smart pascal source code</span><br>
 <code class="delphi" style="background-color: #FFFEEB;">
-{paste PASCAL code here...}
+type
+  TRec = record
+    x: Integer;
+    y: string;
+  end;
+
+{ TApplication }
+procedure TApplication.RunApp;
+const
+  r1: TRec = (x: 1; y: 'one');
+  r2: TRec = (x: 2; y: 'two');
+  r3: TRec = (x: 2; y: 'twobis');
+
+var
+  ints: array of Integer;
+  recs: array of TRec;
+  objs: array of TObject;
+
+begin
+  Writeln('Integers');  // Integers
+  ints.Add(1);
+  ints.Add(2);
+
+  Writeln(ints.IndexOf(0));    // -1
+  Writeln(ints.IndexOf(1));    // 0
+  Writeln(ints.IndexOf(2));    // 1
+  Writeln(ints.IndexOf(1,1));  // -1
+  Writeln(ints.IndexOf(2,1));  // 1
+{-----}
+  Writeln('Records');  // Records
+  recs.Add(r1);
+  recs.Add(r2);
+
+  Writeln(recs.IndexOf(r1));  // 0
+  Writeln(recs.IndexOf(r2));  // 1
+  Writeln(recs.IndexOf(r3));  // -1
+{-----}
+  Writeln('Objects'); // Objects
+  var o := New TObject;
+  objs.Add(TObject.Create);
+  objs.Add(o);
+
+  Writeln(objs.IndexOf(TObject.Create));  // -1
+  Writeln(objs.IndexOf(o));               // 1
 
 </code></pre>
 <button type="button" id="checkoutbutton">Show JS code</button>
 <div id="widget" style="display:none;">
 <pre>
 <code class="javascript">
-{paste JS code here...}
+function $IndexOfRecord(a, i, f) {
+	var ij = JSON.stringify(i);
+	for (var k = f, n = a.length; k < n; k++)
+		if (JSON.stringify(a[k]) == ij)
+			return k;
+	return -1
+}
+      var ints = [],
+         recs = [],
+         objs = [],
+         o = null;
+      WriteLn("Integers");
+      ints.push(1);
+      ints.push(2);
+      WriteLn(ints.indexOf(0));
+      WriteLn(ints.indexOf(1));
+      WriteLn(ints.indexOf(2));
+      WriteLn(ints.indexOf(1,1));
+      WriteLn(ints.indexOf(2,1));
+	  
+      WriteLn("Records");
+      recs.push(Clone$TRec({x$1:1,y:"one"}));
+      recs.push(Clone$TRec({x$1:2,y:"two"}));
+      WriteLn($IndexOfRecord(recs,{x$1:1,y:"one"},0));
+      WriteLn($IndexOfRecord(recs,{x$1:2,y:"two"},0));
+      WriteLn($IndexOfRecord(recs,{x$1:2,y:"twobis"},0));
+	  
+      WriteLn("Objects");
+      o = TObject.Create($New(TObject));
+      objs.push(TObject.Create($New(TObject)));
+      objs.push(o);
+      WriteLn(objs.indexOf(TObject.Create($New(TObject))));
+      WriteLn(objs.indexOf(o));
+   }
+   ,Destroy:TObject.Destroy
+};
+
+function Copy$TRec(s,d) {
+   d.x$1=s.x$1;
+   d.y=s.y;
+   return d;
+}
+function Clone$TRec($) {
+   return {
+      x$1:$.x$1,
+      y:$.y
+   }
+}
 
 </code></pre></div>
 </div>

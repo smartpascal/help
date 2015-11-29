@@ -50,7 +50,7 @@ width: 100%;background: #e18728;font-family: 'PT Serif', serif;padding: 5px 0;te
 <table style="width:100%;border:none;margin:0px;" cellspacing="0" cellpadding="0"> 
   <tr>
     <td class="topichead" style="text-align:left;">
-      <h1 class="p_Heading1" style="page-break-after: avoid;"><span class="f_Heading1">Pascal To Javascript</span></h1>
+      <h1 class="p_Heading1" style="page-break-after: avoid;"><span class="f_Heading1">Variant with Array Index</span></h1>
     </td>
     <td class="topichead" id="idnav">
       <a href="hm_pas2js015.htm"><span class="hmbtnprev"></span></a>
@@ -66,22 +66,83 @@ width: 100%;background: #e18728;font-family: 'PT Serif', serif;padding: 5px 0;te
 <table style="width:100%;border:none;margin:10px;" cellspacing="0" cellpadding="0">
   <tr>
 	<td>
-	
-	{ Description here...}
+Variant with Array Index
 	</td>
   </tr>
 </table>
 	
 <pre><span id="code" class="language-css">Smart pascal source code</span><br>
 <code class="delphi" style="background-color: #FFFEEB;">
-{paste PASCAL code here...}
+{ TApplication }
+procedure TApplication.RunApp;
+var
+  b : Array [0 .. 5] Of String;
+  v : Variant := '5';
+
+Begin
+b[v] := '56';
+
+v:='';
+try
+   b[v] := '56';
+except
+   on e: Exception do
+      WriteLn(e.Message.Before(' ('));
+end;
+
+v := False;
+b[v] := '123';
+WriteLn(b[5]);  // 56
+WriteLn(b[v]);  // 123
+WriteLn(b[0])   //
+
+{ CONSOLE OUTPUT
+
+  b = ["", "", "", "", "", "56", "": "56", false: "123"]
+
+}
 
 </code></pre>
 <button type="button" id="checkoutbutton">Show JS code</button>
 <div id="widget" style="display:none;">
 <pre>
 <code class="javascript">
-{paste JS code here...}
+function StrBefore(s,d){if(!d)return s;var p=s.indexOf(d);return(p<0)?s:s.substr(0,p)}
+
+var Exception={
+	$ClassName: "Exception",
+	$Parent: TObject,
+	$Init: function () { FMessage="" },
+	Create: function (s,Msg) { s.FMessage=Msg; return s }
+}
+function $W(e) { return e.ClassType?e:Exception.Create($New(Exception),e.constructor.name+", "+e.message) }
+
+function $Is(o,c) {
+	if (o===null) return false;
+	return $Inh(o.ClassType,c);
+};
+function $Inh(s,c) {
+	if (s===null) return false;
+	while ((s)&&(s!==c)) s=s.$Parent;
+	return (s)?true:false;
+};
+
+
+      var b = ["","","","","",""],
+         v,
+         v = "5";
+      b[v] = "56";
+      v = "";
+      try {
+         b[v] = "56";
+      } catch ($e) {
+         var e = $W($e);
+         WriteLn(StrBefore(e.FMessage," ("))      }
+      v = false;
+      b[v] = "123";
+      WriteLn(b[5]);
+      WriteLn(b[v]);
+      WriteLn(b[0]);
 
 </code></pre></div>
 </div>
