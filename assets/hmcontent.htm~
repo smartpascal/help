@@ -41,7 +41,6 @@
 <li class="heading2" id="i1" data-bg="ibook.png;ibookopen.png" style="background:url(ibookopen.png) no-repeat;cursor:pointer;padding-left:24px" onclick="return clicked(this,event)"><a class="heading2" id="a1" target="hmcontent"><span class="heading2" id="s1" ondblclick="return dblclicked(this)">PAS 2 JS</span></a>
 <ul id="ul1" style="list-style-type:none">
 
-<<<<<<< HEAD
 <li class="heading3" id="i1.1" style="background:url(ipage.png) no-repeat;padding-left:24px" onclick="return clicked(this,event)"><a class="heading3" id="a1.1" href="hm_pas2js001.htm" target="hmcontent"><span class="heading3" id="s1.1">TObject: the root type</span></a></li>
 
 <li class="heading3" id="i1.2" style="background:url(ipage.png) no-repeat;padding-left:24px" onclick="return clicked(this,event)"><a class="heading3" id="a1.2" href="hm_pas2js002.htm" target="hmcontent"><span class="heading3" id="s1.2">Function Pointer</span></a></li>
@@ -87,66 +86,19 @@
 <li class="heading3" id="i1.27" style="background:url(ipage.png) no-repeat;padding-left:24px" onclick="return clicked(this,event)"><a class="heading3" id="a1.27" href="hm_pas2js027.htm" target="hmcontent"><span class="heading3" id="s1.27">DynArray (Swap, Reverse)</span></a></li>
 <li class="heading3" id="i1.28" style="background:url(ipage.png) no-repeat;padding-left:24px" onclick="return clicked(this,event)"><a class="heading3" id="a1.28" href="hm_pas2js028.htm" target="hmcontent"><span class="heading3" id="s1.28">IN keyword DynArray</span></a></li>
 <li class="heading3" id="i1.29" style="background:url(ipage.png) no-repeat;padding-left:24px" onclick="return clicked(this,event)"><a class="heading3" id="a1.29" href="hm_pas2js029.htm" target="hmcontent"><span class="heading3" id="s1.29">Function pointer with IN keyword</span></a></li>
-=======
-<li class="heading3" id="i1.1" style="background:url(ipage.png) no-repeat;padding-left:24px" onclick="return clicked(this,event)"><a class="heading3" id="a1.1" href="hm_pas2js001.htm" target="hmcontent"><span class="heading3" id="s1.1">Issue 01</span></a></li>
-
-<li class="heading3" id="i1.2" style="background:url(ipage.png) no-repeat;padding-left:24px" onclick="return clicked(this,event)"><a class="heading3" id="a1.2" href="hm_pas2js002.htm" target="hmcontent"><span class="heading3" id="s1.2">Issue 02</span></a></li>
-
-<li class="heading3" id="i1.3" style="background:url(ipage.png) no-repeat;padding-left:24px" onclick="return clicked(this,event)"><a class="heading3" id="a1.3" href="hm_pas2js003.htm" target="hmcontent"><span class="heading3" id="s1.3">Issue 03</span></a></li>
-
-<li class="heading3" id="i1.4" style="background:url(ipage.png) no-repeat;padding-left:24px" onclick="return clicked(this,event)"><a class="heading3" id="a1.4" href="hm_pas2js004.htm" target="hmcontent"><span class="heading3" id="s1.4">Issue 04</span></a></li>
-
-<li class="heading3" id="i1.5" style="background:url(ipage.png) no-repeat;padding-left:24px" onclick="return clicked(this,event)"><a class="heading3" id="a1.5" href="hm_pas2js005.htm" target="hmcontent"><span class="heading3" id="s1.5">Issue 05</span></a></li>
-
-<li class="heading3" id="i1.6" style="background:url(ipage.png) no-repeat;padding-left:24px" onclick="return clicked(this,event)"><a class="heading3" id="a1.6" href="hm_pas2js006.htm" target="hmcontent"><span class="heading3" id="s1.6">Issue 06</span></a></li>
-
-<li class="heading3" id="i1.7" style="background:url(ipage.png) no-repeat;padding-left:24px" onclick="return clicked(this,event)"><a class="heading3" id="a1.7" href="hm_pas2js007.htm" target="hmcontent"><span class="heading3" id="s1.7">Issue 07</span></a></li>
-
-<li class="heading3" id="i1.8" style="background:url(ipage.png) no-repeat;padding-left:24px" onclick="return clicked(this,event)"><a class="heading3" id="a1.8" href="hm_pas2js008.htm" target="hmcontent"><span class="heading3" id="s1.8">Issue 08</span></a></li>
-
-<li class="heading3" id="i1.9" style="background:url(ipage.png) no-repeat;padding-left:24px" onclick="return clicked(this,event)"><a class="heading3" id="a1.9" href="hm_pas2js009.htm" target="hmcontent"><span class="heading3" id="s1.9">Issue 09</span></a></li>
-
-<li class="heading3" id="i1.10" style="background:url(ipage.png) no-repeat;padding-left:24px" onclick="return clicked(this,event)"><a class="heading3" id="a1.10" href="hm_pas2js010.htm" target="hmcontent"><span class="heading3" id="s1.10">Issue 10</span></a></li>
-
-<li class="heading3" id="i1.11" style="background:url(ipage.png) no-repeat;padding-left:24px" onclick="return clicked(this,event)"><a class="heading3" id="a1.11" href="hm_pas2js011.htm" target="hmcontent"><span class="heading3" id="s1.11">Issue 11</span></a></li>
-
-<li class="heading3" id="i1.12" style="background:url(ipage.png) no-repeat;padding-left:24px" onclick="return clicked(this,event)"><a class="heading3" id="a1.12" href="hm_pas2js012.htm" target="hmcontent"><span class="heading3" id="s1.12">Issue 12</span></a></li>
-
-<li class="heading3" id="i1.13" style="background:url(ipage.png) no-repeat;padding-left:24px" onclick="return clicked(this,event)"><a class="heading3" id="a1.13" href="hm_pas2js013.htm" target="hmcontent"><span class="heading3" id="s1.13">Issue 13</span></a></li>
-
-<li class="heading3" id="i1.14" style="background:url(ipage.png) no-repeat;padding-left:24px" onclick="return clicked(this,event)"><a class="heading3" id="a1.14" href="hm_pas2js014.htm" target="hmcontent"><span class="heading3" id="s1.14">Issue 14</span></a></li>
-
-<li class="heading3" id="i1.15" style="background:url(ipage.png) no-repeat;padding-left:24px" onclick="return clicked(this,event)"><a class="heading3" id="a1.15" href="hm_pas2js015.htm" target="hmcontent"><span class="heading3" id="s1.15">Issue 15</span></a>
-</li>
-
-<li class="heading3" id="i1.16" style="background:url(ipage.png) no-repeat;padding-left:24px" onclick="return clicked(this,event)"><a class="heading3" id="a1.16" href="hm_pas2js016.htm" target="hmcontent"><span class="heading3" id="s1.16">Issue 16</span></a></li>
-<li class="heading3" id="i1.17" style="background:url(ipage.png) no-repeat;padding-left:24px" onclick="return clicked(this,event)"><a class="heading3" id="a1.17" href="hm_pas2js017.htm" target="hmcontent"><span class="heading3" id="s1.17">Issue 17</span></a></li>
-<li class="heading3" id="i1.18" style="background:url(ipage.png) no-repeat;padding-left:24px" onclick="return clicked(this,event)"><a class="heading3" id="a1.18" href="hm_pas2js018.htm" target="hmcontent"><span class="heading3" id="s1.18">Issue 18</span></a></li>
-<li class="heading3" id="i1.19" style="background:url(ipage.png) no-repeat;padding-left:24px" onclick="return clicked(this,event)"><a class="heading3" id="a1.19" href="hm_pas2js019.htm" target="hmcontent"><span class="heading3" id="s1.19">Issue 19</span></a></li>
-<li class="heading3" id="i1.20" style="background:url(ipage.png) no-repeat;padding-left:24px" onclick="return clicked(this,event)"><a class="heading3" id="a1.20" href="hm_pas2js020.htm" target="hmcontent"><span class="heading3" id="s1.20">Issue 20</span></a></li>
-<li class="heading3" id="i1.21" style="background:url(ipage.png) no-repeat;padding-left:24px" onclick="return clicked(this,event)"><a class="heading3" id="a1.21" href="hm_pas2js021.htm" target="hmcontent"><span class="heading3" id="s1.21">Issue 21</span></a></li>
-<li class="heading3" id="i1.22" style="background:url(ipage.png) no-repeat;padding-left:24px" onclick="return clicked(this,event)"><a class="heading3" id="a1.22" href="hm_pas2js022.htm" target="hmcontent"><span class="heading3" id="s1.22">Issue 22</span></a></li>
-<li class="heading3" id="i1.23" style="background:url(ipage.png) no-repeat;padding-left:24px" onclick="return clicked(this,event)"><a class="heading3" id="a1.23" href="hm_pas2js023.htm" target="hmcontent"><span class="heading3" id="s1.23">Issue 23</span></a></li>
-<li class="heading3" id="i1.24" style="background:url(ipage.png) no-repeat;padding-left:24px" onclick="return clicked(this,event)"><a class="heading3" id="a1.24" href="hm_pas2js024.htm" target="hmcontent"><span class="heading3" id="s1.24">Issue 24</span></a></li>
-<li class="heading3" id="i1.25" style="background:url(ipage.png) no-repeat;padding-left:24px" onclick="return clicked(this,event)"><a class="heading3" id="a1.25" href="hm_pas2js025.htm" target="hmcontent"><span class="heading3" id="s1.25">Issue 25</span></a></li>
-<li class="heading3" id="i1.26" style="background:url(ipage.png) no-repeat;padding-left:24px" onclick="return clicked(this,event)"><a class="heading3" id="a1.26" href="hm_pas2js026.htm" target="hmcontent"><span class="heading3" id="s1.26">Issue 26</span></a></li>
-<li class="heading3" id="i1.27" style="background:url(ipage.png) no-repeat;padding-left:24px" onclick="return clicked(this,event)"><a class="heading3" id="a1.27" href="hm_pas2js027.htm" target="hmcontent"><span class="heading3" id="s1.27">Issue 27</span></a></li>
-<li class="heading3" id="i1.28" style="background:url(ipage.png) no-repeat;padding-left:24px" onclick="return clicked(this,event)"><a class="heading3" id="a1.28" href="hm_pas2js028.htm" target="hmcontent"><span class="heading3" id="s1.28">Issue 28</span></a></li>
-<li class="heading3" id="i1.29" style="background:url(ipage.png) no-repeat;padding-left:24px" onclick="return clicked(this,event)"><a class="heading3" id="a1.29" href="hm_pas2js029.htm" target="hmcontent"><span class="heading3" id="s1.29">Issue 29</span></a></li>
->>>>>>> 58bb0f6dc213de46fd29bcd438e6ab616802d7ee
-<li class="heading3" id="i1.30" style="background:url(ipage.png) no-repeat;padding-left:24px" onclick="return clicked(this,event)"><a class="heading3" id="a1.30" href="hm_pas2js030.htm" target="hmcontent"><span class="heading3" id="s1.30">Issue 30</span></a></li>
-<li class="heading3" id="i1.31" style="background:url(ipage.png) no-repeat;padding-left:24px" onclick="return clicked(this,event)"><a class="heading3" id="a1.31" href="hm_pas2js031.htm" target="hmcontent"><span class="heading3" id="s1.31">Issue 31</span></a></li>
-<li class="heading3" id="i1.32" style="background:url(ipage.png) no-repeat;padding-left:24px" onclick="return clicked(this,event)"><a class="heading3" id="a1.32" href="hm_pas2js032.htm" target="hmcontent"><span class="heading3" id="s1.32">Issue 32</span></a></li>
-<li class="heading3" id="i1.33" style="background:url(ipage.png) no-repeat;padding-left:24px" onclick="return clicked(this,event)"><a class="heading3" id="a1.33" href="hm_pas2js033.htm" target="hmcontent"><span class="heading3" id="s1.33">Issue 33</span></a></li>
-<li class="heading3" id="i1.34" style="background:url(ipage.png) no-repeat;padding-left:24px" onclick="return clicked(this,event)"><a class="heading3" id="a1.34" href="hm_pas2js034.htm" target="hmcontent"><span class="heading3" id="s1.34">Issue 34</span></a></li>
-<li class="heading3" id="i1.35" style="background:url(ipage.png) no-repeat;padding-left:24px" onclick="return clicked(this,event)"><a class="heading3" id="a1.35" href="hm_pas2js035.htm" target="hmcontent"><span class="heading3" id="s1.35">Issue 35</span></a></li>
-<li class="heading3" id="i1.36" style="background:url(ipage.png) no-repeat;padding-left:24px" onclick="return clicked(this,event)"><a class="heading3" id="a1.36" href="hm_pas2js036.htm" target="hmcontent"><span class="heading3" id="s1.36">Issue 36</span></a></li>
-<li class="heading3" id="i1.37" style="background:url(ipage.png) no-repeat;padding-left:24px" onclick="return clicked(this,event)"><a class="heading3" id="a1.37" href="hm_pas2js037.htm" target="hmcontent"><span class="heading3" id="s1.37">Issue 37</span></a></li>
-<li class="heading3" id="i1.38" style="background:url(ipage.png) no-repeat;padding-left:24px" onclick="return clicked(this,event)"><a class="heading3" id="a1.38" href="hm_pas2js038.htm" target="hmcontent"><span class="heading3" id="s1.38">Issue 38</span></a></li>
-<li class="heading3" id="i1.39" style="background:url(ipage.png) no-repeat;padding-left:24px" onclick="return clicked(this,event)"><a class="heading3" id="a1.39" href="hm_pas2js039.htm" target="hmcontent"><span class="heading3" id="s1.39">Issue 39</span></a></li>
-<li class="heading3" id="i1.40" style="background:url(ipage.png) no-repeat;padding-left:24px" onclick="return clicked(this,event)"><a class="heading3" id="a1.40" href="hm_pas2js040.htm" target="hmcontent"><span class="heading3" id="s1.40">Issue 40</span></a></li>
-<li class="heading3" id="i1.41" style="background:url(ipage.png) no-repeat;padding-left:24px" onclick="return clicked(this,event)"><a class="heading3" id="a1.41" href="hm_pas2js041.htm" target="hmcontent"><span class="heading3" id="s1.41">Issue 41</span></a></li>
-<li class="heading3" id="i1.42" style="background:url(ipage.png) no-repeat;padding-left:24px" onclick="return clicked(this,event)"><a class="heading3" id="a1.42" href="hm_pas2js042.htm" target="hmcontent"><span class="heading3" id="s1.42">Issue 42</span></a></li>
+<li class="heading3" id="i1.30" style="background:url(ipage.png) no-repeat;padding-left:24px" onclick="return clicked(this,event)"><a class="heading3" id="a1.30" href="hm_pas2js030.htm" target="hmcontent"><span class="heading3" id="s1.30">The indexOf() with Record Type</span></a></li>
+<li class="heading3" id="i1.31" style="background:url(ipage.png) no-repeat;padding-left:24px" onclick="return clicked(this,event)"><a class="heading3" id="a1.31" href="hm_pas2js031.htm" target="hmcontent"><span class="heading3" id="s1.31">The indexOf() method with Array</span></a></li>
+<li class="heading3" id="i1.32" style="background:url(ipage.png) no-repeat;padding-left:24px" onclick="return clicked(this,event)"><a class="heading3" id="a1.32" href="hm_pas2js032.htm" target="hmcontent"><span class="heading3" id="s1.32">The indexOf() with Function Pointer</span></a></li>
+<li class="heading3" id="i1.33" style="background:url(ipage.png) no-repeat;padding-left:24px" onclick="return clicked(this,event)"><a class="heading3" id="a1.33" href="hm_pas2js033.htm" target="hmcontent"><span class="heading3" id="s1.33">Array Initialization</span></a></li>
+<li class="heading3" id="i1.34" style="background:url(ipage.png) no-repeat;padding-left:24px" onclick="return clicked(this,event)"><a class="heading3" id="a1.34" href="hm_pas2js034.htm" target="hmcontent"><span class="heading3" id="s1.34">The Insert method with Arrays</span></a></li>
+<li class="heading3" id="i1.35" style="background:url(ipage.png) no-repeat;padding-left:24px" onclick="return clicked(this,event)"><a class="heading3" id="a1.35" href="hm_pas2js035.htm" target="hmcontent"><span class="heading3" id="s1.35">The Map method with Arrays</span></a></li>
+<li class="heading3" id="i1.36" style="background:url(ipage.png) no-repeat;padding-left:24px" onclick="return clicked(this,event)"><a class="heading3" id="a1.36" href="hm_pas2js036.htm" target="hmcontent"><span class="heading3" id="s1.36">The Sort Method with Arrays</span></a></li>
+<li class="heading3" id="i1.37" style="background:url(ipage.png) no-repeat;padding-left:24px" onclick="return clicked(this,event)"><a class="heading3" id="a1.37" href="hm_pas2js037.htm" target="hmcontent"><span class="heading3" id="s1.37">Array of MetaClasses</span></a></li>
+<li class="heading3" id="i1.38" style="background:url(ipage.png) no-repeat;padding-left:24px" onclick="return clicked(this,event)"><a class="heading3" id="a1.38" href="hm_pas2js038.htm" target="hmcontent"><span class="heading3" id="s1.38">Array of procedure as Parameter</span></a></li>
+<li class="heading3" id="i1.39" style="background:url(ipage.png) no-repeat;padding-left:24px" onclick="return clicked(this,event)"><a class="heading3" id="a1.39" href="hm_pas2js039.htm" target="hmcontent"><span class="heading3" id="s1.39">Array of Record Type</span></a></li>
+<li class="heading3" id="i1.40" style="background:url(ipage.png) no-repeat;padding-left:24px" onclick="return clicked(this,event)"><a class="heading3" id="a1.40" href="hm_pas2js040.htm" target="hmcontent"><span class="heading3" id="s1.40">Array of Record Type Add Create</span></a></li>
+<li class="heading3" id="i1.41" style="background:url(ipage.png) no-repeat;padding-left:24px" onclick="return clicked(this,event)"><a class="heading3" id="a1.41" href="hm_pas2js041.htm" target="hmcontent"><span class="heading3" id="s1.41">Array of Record Type Initialization</span></a></li>
+<li class="heading3" id="i1.42" style="background:url(ipage.png) no-repeat;padding-left:24px" onclick="return clicked(this,event)"><a class="heading3" id="a1.42" href="hm_pas2js042.htm" target="hmcontent"><span class="heading3" id="s1.42">Array of Variant</span></a></li>
 <li class="heading3" id="i1.43" style="background:url(ipage.png) no-repeat;padding-left:24px" onclick="return clicked(this,event)"><a class="heading3" id="a1.43" href="hm_pas2js043.htm" target="hmcontent"><span class="heading3" id="s1.43">Issue 43</span></a></li>
 <li class="heading3" id="i1.44" style="background:url(ipage.png) no-repeat;padding-left:24px" onclick="return clicked(this,event)"><a class="heading3" id="a1.44" href="hm_pas2js044.htm" target="hmcontent"><span class="heading3" id="s1.44">Issue 44</span></a></li>
 <li class="heading3" id="i1.45" style="background:url(ipage.png) no-repeat;padding-left:24px" onclick="return clicked(this,event)"><a class="heading3" id="a1.45" href="hm_pas2js045.htm" target="hmcontent"><span class="heading3" id="s1.45">Issue 45</span></a></li>
