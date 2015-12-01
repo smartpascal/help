@@ -50,7 +50,7 @@ width: 100%;background: #e18728;font-family: 'PT Serif', serif;padding: 5px 0;te
 <table style="width:100%;border:none;margin:0px;" cellspacing="0" cellpadding="0"> 
   <tr>
     <td class="topichead" style="text-align:left;">
-      <h1 class="p_Heading1" style="page-break-after: avoid;"><span class="f_Heading1">Pascal To Javascript</span></h1>
+      <h1 class="p_Heading1" style="page-break-after: avoid;"><span class="f_Heading1">ClassType nil</span></h1>
     </td>
     <td class="topichead" id="idnav">
       <a href="hm_pas2js015.htm"><span class="hmbtnprev"></span></a>
@@ -66,22 +66,54 @@ width: 100%;background: #e18728;font-family: 'PT Serif', serif;padding: 5px 0;te
 <table style="width:100%;border:none;margin:10px;" cellspacing="0" cellpadding="0">
   <tr>
 	<td>
-	
-	{ Description here...}
+	ClassType nil
 	</td>
   </tr>
 </table>
 	
 <pre><span id="code" class="language-css">Smart pascal source code</span><br>
 <code class="delphi" style="background-color: #FFFEEB;">
-{paste PASCAL code here...}
+var
+  c : TClass;
+Begin
+if c=nil then
+   WriteLn('nil default');
 
+c := TObject.ClassType;
+
+if c<>nil then
+   WriteLn(c.ClassName);
+
+c:=nil;
+
+if c<>nil then
+   WriteLn('bug 3')
+else WriteLn('set nil');
+
+{ <<< CONSOLE OUTPUTS >>>
+  nil default
+  TObject
+  set nil
+}
 </code></pre>
 <button type="button" id="checkoutbutton">Show JS code</button>
 <div id="widget" style="display:none;">
 <pre>
 <code class="javascript">
-{paste JS code here...}
+      var c = null;
+      if (!c) {
+         WriteLn("nil default");
+      }
+      c = TObject.ClassType(TObject);
+      if (c) {
+         WriteLn(ClassName$1(c));
+      }
+      c = null;
+      if (c) {
+         WriteLn("bug 3");
+      } else {
+         WriteLn("set nil");
+      }
 
 </code></pre></div>
 </div>

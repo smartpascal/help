@@ -50,7 +50,7 @@ width: 100%;background: #e18728;font-family: 'PT Serif', serif;padding: 5px 0;te
 <table style="width:100%;border:none;margin:0px;" cellspacing="0" cellpadding="0"> 
   <tr>
     <td class="topichead" style="text-align:left;">
-      <h1 class="p_Heading1" style="page-break-after: avoid;"><span class="f_Heading1">Pascal To Javascript</span></h1>
+      <h1 class="p_Heading1" style="page-break-after: avoid;"><span class="f_Heading1">Default Parameters expressions</span></h1>
     </td>
     <td class="topichead" id="idnav">
       <a href="hm_pas2js015.htm"><span class="hmbtnprev"></span></a>
@@ -66,22 +66,68 @@ width: 100%;background: #e18728;font-family: 'PT Serif', serif;padding: 5px 0;te
 <table style="width:100%;border:none;margin:10px;" cellspacing="0" cellpadding="0">
   <tr>
 	<td>
-	
-	{ Description here...}
+	Default Parameters expressions
 	</td>
   </tr>
 </table>
 	
 <pre><span id="code" class="language-css">Smart pascal source code</span><br>
 <code class="delphi" style="background-color: #FFFEEB;">
-{paste PASCAL code here...}
+procedure Test1(a: Float = 1);
+begin
+  WriteLn(a);
+end;
+
+procedure Test2(a: Integer = 1 + 1);
+begin
+  WriteLn(a);
+end;
+
+procedure Test3(a: Float = StrToInt('123'));
+begin
+  WriteLn(a);
+end;
+
+{ main.pas }
+procedure TApplication.RunApp;
+Begin
+  Test1;
+  Test2;
+  Test3;
+
+  Test1(10.5);
+  Test1(10);
+  Test1(11.5);
+  { <<<<<<<<<<<< CONSOLE OUTPUTS >>>>>>>>>>>>>>>>>>>
+    1
+    2
+    123
+    10.5
+    10
+    11.5
+  }
 
 </code></pre>
 <button type="button" id="checkoutbutton">Show JS code</button>
 <div id="widget" style="display:none;">
 <pre>
 <code class="javascript">
-{paste JS code here...}
+  Test1$1(1);
+  Test2$1(2);
+  Test3$1(123);
+  Test1$1(10.5);
+  Test1$1(10);
+  Test1$1(11.5);
+
+  function Test3$1(a) {
+   WriteLn(a);
+};
+function Test2$1(a$1) {
+   WriteLn(a$1);
+};
+function Test1$1(a$2) {
+   WriteLn(a$2);
+};
 
 </code></pre></div>
 </div>

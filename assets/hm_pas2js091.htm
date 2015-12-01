@@ -50,7 +50,7 @@ width: 100%;background: #e18728;font-family: 'PT Serif', serif;padding: 5px 0;te
 <table style="width:100%;border:none;margin:0px;" cellspacing="0" cellpadding="0"> 
   <tr>
     <td class="topichead" style="text-align:left;">
-      <h1 class="p_Heading1" style="page-break-after: avoid;"><span class="f_Heading1">Pascal To Javascript</span></h1>
+      <h1 class="p_Heading1" style="page-break-after: avoid;"><span class="f_Heading1">Class var as Property</span></h1>
     </td>
     <td class="topichead" id="idnav">
       <a href="hm_pas2js015.htm"><span class="hmbtnprev"></span></a>
@@ -66,22 +66,57 @@ width: 100%;background: #e18728;font-family: 'PT Serif', serif;padding: 5px 0;te
 <table style="width:100%;border:none;margin:10px;" cellspacing="0" cellpadding="0">
   <tr>
 	<td>
-	
-	{ Description here...}
+	Class var as Property
 	</td>
   </tr>
 </table>
 	
 <pre><span id="code" class="language-css">Smart pascal source code</span><br>
 <code class="delphi" style="background-color: #FFFEEB;">
-{paste PASCAL code here...}
+type
+  TBase = class
+    class var v: Integer;
+    property rv: Integer read v;
+    property wv: Integer write v;
+    property rwv: Integer read v write v;
+  end;
+
+{ main.pas }
+
+Begin
+  TBase.v := 1;
+  Writeln(TBase.rv);
+  TBase.wv := 2;
+  Writeln(TBase.rwv);
+  TBase.rwv := 3;
+  Writeln(TBase.v);
+{ ### CONSOLE OUTPUTS ###
+  1
+  2
+  3
+}
 
 </code></pre>
 <button type="button" id="checkoutbutton">Show JS code</button>
 <div id="widget" style="display:none;">
 <pre>
 <code class="javascript">
-{paste JS code here...}
+      v = 1;
+      WriteLn(v);
+      v = 2;
+      WriteLn(v);
+      v = 3;
+      WriteLn(v);
+
+/// TBase = class (TObject)
+///  [line: 72, column: 3, file: uMain]
+var TBase = {
+   $ClassName:"TBase",$Parent:TObject
+   ,$Init:function ($) {
+      TObject.$Init($);
+   }
+   ,Destroy:TObject.Destroy
+};	  
 
 </code></pre></div>
 </div>

@@ -50,7 +50,7 @@ width: 100%;background: #e18728;font-family: 'PT Serif', serif;padding: 5px 0;te
 <table style="width:100%;border:none;margin:0px;" cellspacing="0" cellpadding="0"> 
   <tr>
     <td class="topichead" style="text-align:left;">
-      <h1 class="p_Heading1" style="page-break-after: avoid;"><span class="f_Heading1">Class parent</span></h1>
+      <h1 class="p_Heading1" style="page-break-after: avoid;"><span class="f_Heading1">Parent class</span></h1>
     </td>
     <td class="topichead" id="idnav">
       <a href="hm_pas2js015.htm"><span class="hmbtnprev"></span></a>
@@ -66,21 +66,106 @@ width: 100%;background: #e18728;font-family: 'PT Serif', serif;padding: 5px 0;te
 <table style="width:100%;border:none;margin:10px;" cellspacing="0" cellpadding="0">
   <tr>
 	<td>
-	Class parent
+	Parent class
 	</td>
   </tr>
 </table>
 	
 <pre><span id="code" class="language-css">Smart pascal source code</span><br>
 <code class="delphi" style="background-color: #FFFEEB;">
-{paste PASCAL code here...} 
+type
+  TBase = class
+  end;
+
+type
+  TChild = class(TBase);
+
+type
+  TSubChild = class(TChild);
+
+type
+  TOtherChild = class(TBase);
+
+procedure WriteLnHierarchy(base: TClass);
+begin
+  while Assigned(base) do
+  begin
+    Writeln(' => ');
+    Writeln(base.ClassName);
+    base := base.ClassParent;
+  end;
+  Writeln('');
+end;
+
+{ main.pas }
+
+Begin
+  WriteLnHierarchy(TBase);
+  WriteLnHierarchy(TChild);
+  WriteLnHierarchy(TSubChild);
+  WriteLnHierarchy(TOtherChild);
+
+{ ### CONSOLE OUTPUTS ###
+   => TBase => TObject
+   => TChild => TBase => TObject
+   => TSubChild => TChild => TBase => TObject
+   => TOtherChild => TBase => TObject
+}
 
 </code></pre>
 <button type="button" id="checkoutbutton">Show JS code</button>
 <div id="widget" style="display:none;">
 <pre>
 <code class="javascript">
-{paste JS code here...}
+      WriteLnHierarchy(TBase);
+      WriteLnHierarchy(TChild);
+      WriteLnHierarchy(TSubChild);
+      WriteLnHierarchy(TOtherChild);
+
+function WriteLnHierarchy(base) {
+   while (base!==null) {
+      WriteLn(" => ");
+      WriteLn(ClassName$1(base));
+      base = TObject.ClassParent(base);
+   }
+   WriteLn("");
+};
+/// TBase = class (TObject)
+///  [line: 72, column: 3, file: uMain]
+var TBase = {
+   $ClassName:"TBase",$Parent:TObject
+   ,$Init:function ($) {
+      TObject.$Init($);
+   }
+   ,Destroy:TObject.Destroy
+};
+/// TOtherChild = class (TBase)
+///  [line: 82, column: 3, file: uMain]
+var TOtherChild = {
+   $ClassName:"TOtherChild",$Parent:TBase
+   ,$Init:function ($) {
+      TBase.$Init($);
+   }
+   ,Destroy:TObject.Destroy
+};
+/// TChild = class (TBase)
+///  [line: 76, column: 3, file: uMain]
+var TChild = {
+   $ClassName:"TChild",$Parent:TBase
+   ,$Init:function ($) {
+      TBase.$Init($);
+   }
+   ,Destroy:TObject.Destroy
+};
+/// TSubChild = class (TChild)
+///  [line: 79, column: 3, file: uMain]
+var TSubChild = {
+   $ClassName:"TSubChild",$Parent:TChild
+   ,$Init:function ($) {
+      TChild.$Init($);
+   }
+   ,Destroy:TObject.Destroy
+};
 
 </code></pre></div>
 </div>

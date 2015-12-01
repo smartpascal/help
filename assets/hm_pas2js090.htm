@@ -50,7 +50,7 @@ width: 100%;background: #e18728;font-family: 'PT Serif', serif;padding: 5px 0;te
 <table style="width:100%;border:none;margin:0px;" cellspacing="0" cellpadding="0"> 
   <tr>
     <td class="topichead" style="text-align:left;">
-      <h1 class="p_Heading1" style="page-break-after: avoid;"><span class="f_Heading1">Pascal To Javascript</span></h1>
+      <h1 class="p_Heading1" style="page-break-after: avoid;"><span class="f_Heading1">Self reference</span></h1>
     </td>
     <td class="topichead" id="idnav">
       <a href="hm_pas2js015.htm"><span class="hmbtnprev"></span></a>
@@ -66,23 +66,61 @@ width: 100%;background: #e18728;font-family: 'PT Serif', serif;padding: 5px 0;te
 <table style="width:100%;border:none;margin:10px;" cellspacing="0" cellpadding="0">
   <tr>
 	<td>
-	
-	{ Description here...}
+	Class Self reference
 	</td>
   </tr>
 </table>
 	
 <pre><span id="code" class="language-css">Smart pascal source code</span><br>
 <code class="delphi" style="background-color: #FFFEEB;">
-{paste PASCAL code here...}
+type
+TMyObj = class
+  function GetSelf: TMyObj;
+end;
 
+function TMyObj.GetSelf: TMyObj;
+begin
+  Result := Self;
+end;
+
+{ main.pas }
+
+var
+  o = TMyObj.Create;
+
+Begin
+  if o <> o.GetSelf then
+    Writeln('bug');
+    WriteLn(o.GetSelf);
+  { ### CONSOLE OUTPUTS ###
+   {"ClassType":{"$ClassName":"TMyObj","$Parent":{"$ClassName":"TObject","$Parent":null}}}
+}
 </code></pre>
 <button type="button" id="checkoutbutton">Show JS code</button>
 <div id="widget" style="display:none;">
 <pre>
 <code class="javascript">
-{paste JS code here...}
-
+      var o = null,
+         o = TObject.Create($New(TMyObj));
+      if (o!==TMyObj.GetSelf(o)) {
+         WriteLn("bug");
+      }
+      WriteLn(TMyObj.GetSelf(o));
+	  
+/// TMyObj = class (TObject)
+///  [line: 72, column: 1, file: uMain]
+var TMyObj = {
+   $ClassName:"TMyObj",$Parent:TObject
+   ,$Init:function ($) {
+      TObject.$Init($);
+   }
+   /// function TMyObj.GetSelf() : TMyObj
+   ///  [line: 76, column: 17, file: uMain]
+   ,GetSelf:function(Self) {
+      return Self;
+   }
+   ,Destroy:TObject.Destroy
+};	  
 </code></pre></div>
 </div>
 </body>
