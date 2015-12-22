@@ -50,7 +50,7 @@ width: 100%;background: #e18728;font-family: 'PT Serif', serif;padding: 5px 0;te
 <table style="width:100%;border:none;margin:0px;" cellspacing="0" cellpadding="0"> 
   <tr>
     <td class="topichead" style="text-align:left;">
-      <h1 class="p_Heading1" style="page-break-after: avoid;"><span class="f_Heading1">Pascal To Javascript</span></h1>
+      <h1 class="p_Heading1" style="page-break-after: avoid;"><span class="f_Heading1">Enum with boolean operators</span></h1>
     </td>
     <td class="topichead" id="idnav">
       <a href="hm_pas2js015.htm"><span class="hmbtnprev"></span></a>
@@ -66,22 +66,87 @@ width: 100%;background: #e18728;font-family: 'PT Serif', serif;padding: 5px 0;te
 <table style="width:100%;border:none;margin:10px;" cellspacing="0" cellpadding="0">
   <tr>
 	<td>
-	
-	{ Description here...}
+	Enum with boolean operators
 	</td>
   </tr>
 </table>
 	
 <pre><span id="code" class="language-css">Smart pascal source code</span><br>
 <code class="delphi" style="background-color: #FFFEEB;">
-{paste PASCAL code here...}
+  type
+    TEnum = flags(Alpha, Beta, Gamma);
+
+  procedure WriteLnInt(i: Integer);
+  begin
+    WriteLn('int ');
+    WriteLn(i);
+  end;
+
+  procedure WriteLnEnum(e: TEnum);
+  begin
+    WriteLn('enum ');
+    WriteLn(e);
+  end;
+
+  WriteLnInt(TEnum.Alpha);
+  WriteLnInt(TEnum.Beta);
+  WriteLnInt(TEnum.Gamma);
+
+  WriteLnEnum(TEnum.Alpha);
+  WriteLnEnum(TEnum.Beta);
+  WriteLnEnum(TEnum.Gamma);
+
+  WriteLnInt(TEnum.Alpha or TEnum.Gamma);
+  WriteLnInt(TEnum.Beta xor TEnum.Gamma);
+  WriteLnInt(TEnum.Beta and TEnum.Alpha);
+
+  WriteLnEnum(TEnum.Alpha or TEnum.Gamma);
+  WriteLnEnum(TEnum.Beta xor TEnum.Gamma);
+  WriteLnEnum(TEnum.Beta and TEnum.Alpha);
+
+  { <<< CONSOLE OUTPUTS >>>
+    int 1
+    int 2
+    int 4
+    enum 1
+    enum 2
+    enum 4
+    int 5
+    int 6
+    int 0
+    enum 5
+    enum 6
+    enum 0
+  }
 
 </code></pre>
 <button type="button" id="checkoutbutton">Show JS code</button>
 <div id="widget" style="display:none;">
 <pre>
 <code class="javascript">
-{paste JS code here...}
+  function WriteLnEnum(e) {
+	 WriteLn("enum ");
+	 WriteLn(e);
+  };
+  function WriteLnInt(i) {
+	 WriteLn("int ");
+	 WriteLn(i);
+  };
+  /// TEnum enumeration
+  ///  [line: 40, column: 5, file: uMain]
+  var TEnum = { 1:"Alpha", 2:"Beta", 4:"Gamma" };
+  WriteLnInt(1);
+  WriteLnInt(2);
+  WriteLnInt(4);
+  WriteLnEnum(1);
+  WriteLnEnum(2);
+  WriteLnEnum(4);
+  WriteLnInt(5);
+  WriteLnInt(6);
+  WriteLnInt(0);
+  WriteLnEnum(5);
+  WriteLnEnum(6);
+  WriteLnEnum(0);
 
 </code></pre></div>
 </div>

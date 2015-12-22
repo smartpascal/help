@@ -50,7 +50,7 @@ width: 100%;background: #e18728;font-family: 'PT Serif', serif;padding: 5px 0;te
 <table style="width:100%;border:none;margin:0px;" cellspacing="0" cellpadding="0"> 
   <tr>
     <td class="topichead" style="text-align:left;">
-      <h1 class="p_Heading1" style="page-break-after: avoid;"><span class="f_Heading1">Pascal To Javascript</span></h1>
+      <h1 class="p_Heading1" style="page-break-after: avoid;"><span class="f_Heading1">ExceptObject</span></h1>
     </td>
     <td class="topichead" id="idnav">
       <a href="hm_pas2js015.htm"><span class="hmbtnprev"></span></a>
@@ -66,22 +66,165 @@ width: 100%;background: #e18728;font-family: 'PT Serif', serif;padding: 5px 0;te
 <table style="width:100%;border:none;margin:10px;" cellspacing="0" cellpadding="0">
   <tr>
 	<td>
-	
-	{ Description here...}
+	ExceptObject<br>
+	Actually, it seems that ExceptObject is not defined in SmartMS 2.1
 	</td>
   </tr>
 </table>
 	
 <pre><span id="code" class="language-css">Smart pascal source code</span><br>
 <code class="delphi" style="background-color: #FFFEEB;">
-{paste PASCAL code here...}
+type
+  EMyExcept = class(Exception)
+  end;
+
+  { main.pas }
+
+Begin
+//--- TESTE I ---
+Try
+  Raise Exception.Create('1');
+Finally
+  If Assigned(ExceptObject) Then
+     Raise Exception.Create('2');
+End;
+
+//--- TESTE II ---
+
+  if ExceptObject <> nil then
+    WriteLn('bug');
+
+  try
+    raise Exception.Create('hello');
+  except
+    WriteLn(ExceptObject.ClassName + ': ' + ExceptObject.Message);
+    try
+      raise EMyExcept.Create('world');
+    except
+      on e: EMyExcept do
+      begin
+        WriteLn(e.ClassName + ': ' + e.Message);
+        WriteLn(ExceptObject.ClassName + ': ' + ExceptObject.Message);
+        if e <> ExceptObject then
+          WriteLn('bug');
+      end;
+      else
+        WriteLn('bug');
+    end;
+    WriteLn(ExceptObject.ClassName + ': ' + ExceptObject.Message);
+  end;
+
+  if ExceptObject <> nil then
+    WriteLn('bug');
+
+  try
+    try
+      raise EMyExcept.Create('hello world');
+    finally
+      WriteLn(ExceptObject.ClassName + ': ' + ExceptObject.Message);
+    end;
+  except
+    WriteLn(ExceptObject.ClassName + ': ' + ExceptObject.Message);
+  end;
+
+  if ExceptObject <> nil then
+    WriteLn('bug');
+
+  { <<< EXPECTED CONSOLE OUTPUTS >>>
+      Exception: hello
+      EMyExcept: world
+      EMyExcept: world
+      Exception: hello
+      EMyExcept: hello world
+      EMyExcept: hello world
+  }
+
+//---> Uncaught ReferenceError: ExceptObject is not defined 
 
 </code></pre>
 <button type="button" id="checkoutbutton">Show JS code</button>
 <div id="widget" style="display:none;">
 <pre>
 <code class="javascript">
-{paste JS code here...}
+var Exception={
+	$ClassName: "Exception",
+	$Parent: TObject,
+	$Init: function () { FMessage="" },
+	Create: function (s,Msg) { s.FMessage=Msg; return s }
+}
+function $W(e) { return e.ClassType?e:Exception.Create($New(Exception),e.constructor.name+", "+e.message) }
+function $ToClassType(o) {
+	if (o===null) return o;
+	return o.ClassType
+};
+
+function $Is(o,c) {
+	if (o===null) return false;
+	return $Inh(o.ClassType,c);
+};
+function $Inh(s,c) {
+	if (s===null) return false;
+	while ((s)&&(s!==c)) s=s.$Parent;
+	return (s)?true:false;
+};
+
+// MAIN CODE
+      try {
+         throw Exception.Create($New(Exception),"1");
+      } finally {
+         if (ExceptObject()) {
+            throw Exception.Create($New(Exception),"2");
+         }
+      }
+      if (ExceptObject()!==null) {
+         WriteLn("bug");
+      }
+      try {
+         throw Exception.Create($New(Exception),"hello");
+      } catch ($e) {
+         WriteLn((ClassName$1($ToClassType(ExceptObject()))+": "+ExceptObject().FMessage));
+         try {
+            throw Exception.Create($New(EMyExcept),"world");
+         } catch ($e) {
+            if ($Is($e,EMyExcept)) {
+               var e = $W($e);
+               WriteLn((ClassName$1($ToClassType(e))+": "+e.FMessage));
+               WriteLn((ClassName$1($ToClassType(ExceptObject()))+": "+ExceptObject().FMessage));
+               if (e!==ExceptObject()) {
+                  WriteLn("bug");
+               }
+            }
+            else {
+               WriteLn("bug")            }
+         }
+         WriteLn((ClassName$1($ToClassType(ExceptObject()))+": "+ExceptObject().FMessage));
+      }
+      if (ExceptObject()!==null) {
+         WriteLn("bug");
+      }
+      try {
+         try {
+            throw Exception.Create($New(EMyExcept),"hello world");
+         } finally {
+            WriteLn((ClassName$1($ToClassType(ExceptObject()))+": "+ExceptObject().FMessage));
+         }
+      } catch ($e) {
+         WriteLn((ClassName$1($ToClassType(ExceptObject()))+": "+ExceptObject().FMessage));
+      }
+      if (ExceptObject()!==null) {
+         WriteLn("bug");
+      }
+	  
+/// EMyExcept = class (Exception)
+///  [line: 35, column: 3, file: uMain]
+var EMyExcept = {
+   $ClassName:"EMyExcept",$Parent:Exception
+   ,$Init:function ($) {
+      Exception.$Init($);
+   }
+   ,Destroy:Exception.Destroy
+};
+	  
 
 </code></pre></div>
 </div>

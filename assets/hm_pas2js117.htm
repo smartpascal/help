@@ -50,7 +50,7 @@ width: 100%;background: #e18728;font-family: 'PT Serif', serif;padding: 5px 0;te
 <table style="width:100%;border:none;margin:0px;" cellspacing="0" cellpadding="0"> 
   <tr>
     <td class="topichead" style="text-align:left;">
-      <h1 class="p_Heading1" style="page-break-after: avoid;"><span class="f_Heading1">Pascal To Javascript</span></h1>
+      <h1 class="p_Heading1" style="page-break-after: avoid;"><span class="f_Heading1">Division by zero | Divide assign /=</span></h1>
     </td>
     <td class="topichead" id="idnav">
       <a href="hm_pas2js015.htm"><span class="hmbtnprev"></span></a>
@@ -66,22 +66,59 @@ width: 100%;background: #e18728;font-family: 'PT Serif', serif;padding: 5px 0;te
 <table style="width:100%;border:none;margin:10px;" cellspacing="0" cellpadding="0">
   <tr>
 	<td>
-	
-	{ Description here...}
+	Division by zero examples and using the Assign operator to divide 
 	</td>
   </tr>
 </table>
 	
 <pre><span id="code" class="language-css">Smart pascal source code</span><br>
 <code class="delphi" style="background-color: #FFFEEB;">
-{paste PASCAL code here...}
+  // ----  division by zero using float ---- //
+  var a := 0.0;
+
+  a := 1 / a;
+  WriteLn(a); // Infinity
+
+  // ----  division by zero using Integer ---- //
+  var b := 0;
+
+  b := 1 div b;
+  WriteLn(b); // Infinity
+
+  // ----  division with Assign operator ---- //
+  
+  var f := 150.0;
+
+  f /= 1.5; // 150/1.5
+  WriteLn(f); // 100
+  f /= f;
+  WriteLn(f); // 1
+  f /= 1 + f;
+  WriteLn(f); // 0.5
 
 </code></pre>
 <button type="button" id="checkoutbutton">Show JS code</button>
 <div id="widget" style="display:none;">
 <pre>
 <code class="javascript">
-{paste JS code here...}
+function $Div(a,b) { var r=a/b; return (r>=0)?Math.floor(r):Math.ceil(r) }
+
+  var a = 0;
+  var b = 0;
+  var f = 0;
+  a = 0;
+  a = 1/a;
+  WriteLn(a);
+  b = 0;
+  b = $Div(1,b);
+  WriteLn(b);
+  f = 150;
+  f/=1.5;
+  WriteLn(f);
+  f/=f;
+  WriteLn(f);
+  f/=1+f;
+  WriteLn(f);
 
 </code></pre></div>
 </div>

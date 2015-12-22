@@ -50,7 +50,7 @@ width: 100%;background: #e18728;font-family: 'PT Serif', serif;padding: 5px 0;te
 <table style="width:100%;border:none;margin:0px;" cellspacing="0" cellpadding="0"> 
   <tr>
     <td class="topichead" style="text-align:left;">
-      <h1 class="p_Heading1" style="page-break-after: avoid;"><span class="f_Heading1">Pascal To Javascript</span></h1>
+      <h1 class="p_Heading1" style="page-break-after: avoid;"><span class="f_Heading1">Dyn Array of Objects</span></h1>
     </td>
     <td class="topichead" id="idnav">
       <a href="hm_pas2js015.htm"><span class="hmbtnprev"></span></a>
@@ -66,22 +66,94 @@ width: 100%;background: #e18728;font-family: 'PT Serif', serif;padding: 5px 0;te
 <table style="width:100%;border:none;margin:10px;" cellspacing="0" cellpadding="0">
   <tr>
 	<td>
-	
-	{ Description here...}
+	Dynamic Array of Objects
 	</td>
   </tr>
 </table>
 	
 <pre><span id="code" class="language-css">Smart pascal source code</span><br>
 <code class="delphi" style="background-color: #FFFEEB;">
-{paste PASCAL code here...}
+type
+  TMyObj = class
+    Field: Integer;
+    constructor Create(i: Integer);
+  end;
+
+type
+  TMyObjects = array of TMyObj;
+
+constructor TMyObj.Create(i: Integer);
+begin
+  Field := i * 2;
+end;
+
+{ main.pas }
+
+var
+  i: Integer;
+  objs: TMyObjects;
+
+Begin
+  objs := new TMyObj[3];
+  for i := 0 to Length(objs) - 1 do
+    objs[i] := new TMyObj(i + 1);
+
+  for i := Low(objs) to High(objs) do
+    WriteLn(objs[i].Field);
+
+  objs.Add(TMyObj.Create(10));
+  objs.Delete(1, 2);
+
+  for i := Low(objs) to High(objs) do
+    WriteLn(objs[i].Field);
+ { <<< CONSOLE OUTPUTS >>>
+  2
+  4
+  6
+  2
+  20
+ }
+end;
 
 </code></pre>
 <button type="button" id="checkoutbutton">Show JS code</button>
 <div id="widget" style="display:none;">
 <pre>
 <code class="javascript">
-{paste JS code here...}
+     var i = 0;
+      var objs = [];
+      objs = $NewArrayFn(3,function (){return null});
+      var $temp1;
+      for(i=0,$temp1=objs.length;i<$temp1;i++) {
+         objs[i]=TMyObj.Create$5($New(TMyObj),i+1);
+      }
+      var $temp2;
+      for(i=0,$temp2=objs.length;i<$temp2;i++) {
+         WriteLn(objs[i].Field);
+      }
+      objs.push(TMyObj.Create$5($New(TMyObj),10));
+      objs.splice(1,2)
+      ;
+      var $temp3;
+      for(i=0,$temp3=objs.length;i<$temp3;i++) {
+         WriteLn(objs[i].Field);
+      }
+/// TMyObj = class (TObject)
+///  [line: 35, column: 3, file: uMain]
+var TMyObj = {
+   $ClassName:"TMyObj",$Parent:TObject
+   ,$Init:function ($) {
+      TObject.$Init($);
+      $.Field = 0;
+   }
+   /// constructor TMyObj.Create(i: Integer)
+   ///  [line: 43, column: 20, file: uMain]
+   ,Create$5:function(Self, i$1) {
+      Self.Field = i$1*2;
+      return Self
+   }
+   ,Destroy:TObject.Destroy
+};	  
 
 </code></pre></div>
 </div>

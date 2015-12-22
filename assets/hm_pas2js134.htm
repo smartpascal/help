@@ -50,7 +50,7 @@ width: 100%;background: #e18728;font-family: 'PT Serif', serif;padding: 5px 0;te
 <table style="width:100%;border:none;margin:0px;" cellspacing="0" cellpadding="0"> 
   <tr>
     <td class="topichead" style="text-align:left;">
-      <h1 class="p_Heading1" style="page-break-after: avoid;"><span class="f_Heading1">Pascal To Javascript</span></h1>
+      <h1 class="p_Heading1" style="page-break-after: avoid;"><span class="f_Heading1">Enum Names | step to</span></h1>
     </td>
     <td class="topichead" id="idnav">
       <a href="hm_pas2js015.htm"><span class="hmbtnprev"></span></a>
@@ -66,22 +66,69 @@ width: 100%;background: #e18728;font-family: 'PT Serif', serif;padding: 5px 0;te
 <table style="width:100%;border:none;margin:10px;" cellspacing="0" cellpadding="0">
   <tr>
 	<td>
-	
-	{ Description here...}
+	Enum Names
 	</td>
   </tr>
 </table>
 	
 <pre><span id="code" class="language-css">Smart pascal source code</span><br>
 <code class="delphi" style="background-color: #FFFEEB;">
-{paste PASCAL code here...}
+type
+  TEnum = (enOne, enTwo, enThree);
+
+type
+  TDisj = (d0 = 0, d2 = 2, d4 = 4, d6 = 6, d8 = 8, d10 = 10, d12 = 12);
+
+{ main.pas }
+var
+  j: integer;
+Begin
+  WriteLn(TEnum.enOne.Name);
+  WriteLn(enTwo.Name);
+  WriteLn(TEnum(Ord(enTwo) + 1).Name);
+
+  for var e in TEnum do
+    WriteLn(e.Name);
+
+  for j := 0 to 12 step 3 do
+  begin
+    var e: TDisj;
+    e := TDisj(j);
+    WriteLn(e.Name);
+  end;
+
+  { <<< CONSOLE OUTPUTS >>>
+    enOne
+    enTwo
+    enThree
+    enOne
+    enTwo
+    enThree
+    d0
+    ?
+    d6
+    ?
+    d12
+  }
 
 </code></pre>
 <button type="button" id="checkoutbutton">Show JS code</button>
 <div id="widget" style="display:none;">
 <pre>
 <code class="javascript">
-{paste JS code here...}
+  var j = 0;
+  var e = 0;
+  var e$1 = 0;
+  WriteLn("enOne");
+  WriteLn("enTwo");
+  WriteLn("enThree");
+  for(e=0;e<=2;e++) {
+	 WriteLn(($EnumToName(TEnum,e)));
+  }
+  for(j=0;j<=12;j+=3) {
+	 e$1 = j;
+	 WriteLn(($EnumToName(TDisj,e$1)));
+  }
 
 </code></pre></div>
 </div>

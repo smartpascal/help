@@ -50,7 +50,7 @@ width: 100%;background: #e18728;font-family: 'PT Serif', serif;padding: 5px 0;te
 <table style="width:100%;border:none;margin:0px;" cellspacing="0" cellpadding="0"> 
   <tr>
     <td class="topichead" style="text-align:left;">
-      <h1 class="p_Heading1" style="page-break-after: avoid;"><span class="f_Heading1">Pascal To Javascript</span></h1>
+      <h1 class="p_Heading1" style="page-break-after: avoid;"><span class="f_Heading1">Event Virtual</span></h1>
     </td>
     <td class="topichead" id="idnav">
       <a href="hm_pas2js015.htm"><span class="hmbtnprev"></span></a>
@@ -66,22 +66,149 @@ width: 100%;background: #e18728;font-family: 'PT Serif', serif;padding: 5px 0;te
 <table style="width:100%;border:none;margin:10px;" cellspacing="0" cellpadding="0">
   <tr>
 	<td>
-	
-	{ Description here...}
+	Event Virtual
 	</td>
   </tr>
 </table>
 	
 <pre><span id="code" class="language-css">Smart pascal source code</span><br>
 <code class="delphi" style="background-color: #FFFEEB;">
-{paste PASCAL code here...}
+type
+  TBase = class
+    Field: Integer;
+    procedure Event(s: String); virtual;
+    begin
+      WriteLn('Base ' + s + ' ' + IntToStr(Field) + ' ' + ClassName);
+    end;
+  end;
+
+type
+  TChild = class(TBase)
+    procedure Event(s: String); override;
+    begin
+      WriteLn('Child ' + s + ' ' + IntToStr(Field) + ' ' + ClassName);
+    end;
+  end;
+
+type
+  TSubChild = class(TChild)
+  end;
+
+{ main.pas }
+
+Begin
+  var e: procedure(s: String);
+
+  var b := new TBase;
+  var c := new TChild;
+  var s := new TSubChild;
+  b.Field := 1;
+  c.Field := 2;
+  s.Field := 3;
+
+  e := b.Event;
+  e('a');
+
+  e := c.Event;
+  e('b');
+
+  e := s.Event;
+  e('c');
+
+  e := TBase(c).Event;
+  e('d');
+
+  e := TBase(s).Event;
+  e('f');
+
+  e := TChild(s).Event;
+  e('g');
+
+  { <<< CONSOLE OUTPUTS >>>
+    Base a 1 TBase
+    Child b 2 TChild
+    Child c 3 TSubChild
+    Child d 2 TChild
+    Child f 3 TSubChild
+    Child g 3 TSubChild
+  }
 
 </code></pre>
 <button type="button" id="checkoutbutton">Show JS code</button>
 <div id="widget" style="display:none;">
 <pre>
 <code class="javascript">
-{paste JS code here...}
+function $Event1(i,f) {
+	var li=i,lf=f;
+	return function(a) {
+		return lf.call(li,li,a)
+	}
+}
+
+  var e = null;
+  var b = null;
+  var c = null;
+  var s = null;
+  b = TObject.Create($New(TBase));
+  c = TObject.Create($New(TChild));
+  s = TObject.Create($New(TSubChild));
+  b.Field = 1;
+  c.Field = 2;
+  s.Field = 3;
+  e = $Event1(b,TBase.Event$);
+  e("a");
+  e = $Event1(c,TBase.Event$);
+  e("b");
+  e = $Event1(s,TBase.Event$);
+  e("c");
+  e = $Event1(c,TBase.Event$);
+  e("d");
+  e = $Event1(s,TBase.Event$);
+  e("f");
+  e = $Event1(s,TBase.Event$);
+  e("g");
+  
+/// TBase = class (TObject)
+///  [line: 35, column: 4, file: uMain]
+var TBase = {
+   $ClassName:"TBase",$Parent:TObject
+   ,$Init:function ($) {
+      TObject.$Init($);
+      $.Field = 0;
+   }
+   /// procedure TBase.Event(s: String)
+   ///  [line: 37, column: 17, file: uMain]
+   ,Event:function(Self, s$1) {
+      WriteLn(("Base "+s$1+" "+Self.Field.toString()+" "+TObject.ClassName(Self.ClassType)));
+   }
+   ,Destroy:TObject.Destroy
+   ,Event$:function($){return $.ClassType.Event.apply($.ClassType, arguments)}
+};
+/// TChild = class (TBase)
+///  [line: 44, column: 4, file: uMain]
+var TChild = {
+   $ClassName:"TChild",$Parent:TBase
+   ,$Init:function ($) {
+      TBase.$Init($);
+   }
+   /// procedure TChild.Event(s: String)
+   ///  [line: 45, column: 17, file: uMain]
+   ,Event:function(Self, s$2) {
+      WriteLn(("Child "+s$2+" "+Self.Field.toString()+" "+TObject.ClassName(Self.ClassType)));
+   }
+   ,Destroy:TObject.Destroy
+   ,Event$:function($){return $.ClassType.Event.apply($.ClassType, arguments)}
+};
+/// TSubChild = class (TChild)
+///  [line: 52, column: 4, file: uMain]
+var TSubChild = {
+   $ClassName:"TSubChild",$Parent:TChild
+   ,$Init:function ($) {
+      TChild.$Init($);
+   }
+   ,Destroy:TObject.Destroy
+   ,Event:TChild.Event
+};  
 
 </code></pre></div>
 </div>

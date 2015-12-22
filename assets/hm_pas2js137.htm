@@ -50,7 +50,7 @@ width: 100%;background: #e18728;font-family: 'PT Serif', serif;padding: 5px 0;te
 <table style="width:100%;border:none;margin:0px;" cellspacing="0" cellpadding="0"> 
   <tr>
     <td class="topichead" style="text-align:left;">
-      <h1 class="p_Heading1" style="page-break-after: avoid;"><span class="f_Heading1">Pascal To Javascript</span></h1>
+      <h1 class="p_Heading1" style="page-break-after: avoid;"><span class="f_Heading1">Exception log</span></h1>
     </td>
     <td class="topichead" id="idnav">
       <a href="hm_pas2js015.htm"><span class="hmbtnprev"></span></a>
@@ -66,22 +66,73 @@ width: 100%;background: #e18728;font-family: 'PT Serif', serif;padding: 5px 0;te
 <table style="width:100%;border:none;margin:10px;" cellspacing="0" cellpadding="0">
   <tr>
 	<td>
-	
-	{ Description here...}
+	Exception log
 	</td>
   </tr>
 </table>
 	
 <pre><span id="code" class="language-css">Smart pascal source code</span><br>
 <code class="delphi" style="background-color: #FFFEEB;">
-{paste PASCAL code here...}
+  procedure LogException(sender: TObject; AException: Exception; Value: string);
+  begin
+    WriteLn(AException.Message);
+    WriteLn(Value);
+  end;
+
+  var x: Integer;
+
+  try
+    x := 2012;
+    if x > 2000 then
+      raise Exception.Create('something went wrong');
+  except
+    on E: Exception do
+      LogException(NIL, E, 'woops!');
+  end;
+
+  { <<< CONSOLE OUTPUTS >>>
+    something went wrong
+    woops!
+  }
+
 
 </code></pre>
 <button type="button" id="checkoutbutton">Show JS code</button>
 <div id="widget" style="display:none;">
 <pre>
 <code class="javascript">
-{paste JS code here...}
+var Exception={
+	$ClassName: "Exception",
+	$Parent: TObject,
+	$Init: function () { FMessage="" },
+	Create: function (s,Msg) { s.FMessage=Msg; return s }
+}
+function $W(e) { return e.ClassType?e:Exception.Create($New(Exception),e.constructor.name+", "+e.message) }
+
+function $Is(o,c) {
+	if (o===null) return false;
+	return $Inh(o.ClassType,c);
+};
+function $Inh(s,c) {
+	if (s===null) return false;
+	while ((s)&&(s!==c)) s=s.$Parent;
+	return (s)?true:false;
+};
+
+      var x$1 = 0;
+      function LogException(sender, AException, Value) {
+         WriteLn(AException.FMessage);
+         WriteLn(Value);
+      };
+      try {
+         x$1 = 2012;
+         if (x$1>2000) {
+            throw Exception.Create($New(Exception),"something went wrong");
+         }
+      } catch ($e) {
+         var E = $W($e);
+         LogException(null,E,"woops!")      }
+ 
 
 </code></pre></div>
 </div>

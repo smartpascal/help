@@ -50,7 +50,7 @@ width: 100%;background: #e18728;font-family: 'PT Serif', serif;padding: 5px 0;te
 <table style="width:100%;border:none;margin:0px;" cellspacing="0" cellpadding="0"> 
   <tr>
     <td class="topichead" style="text-align:left;">
-      <h1 class="p_Heading1" style="page-break-after: avoid;"><span class="f_Heading1">Pascal To Javascript</span></h1>
+      <h1 class="p_Heading1" style="page-break-after: avoid;"><span class="f_Heading1">Enum | Succ | Pred</span></h1>
     </td>
     <td class="topichead" id="idnav">
       <a href="hm_pas2js015.htm"><span class="hmbtnprev"></span></a>
@@ -66,22 +66,79 @@ width: 100%;background: #e18728;font-family: 'PT Serif', serif;padding: 5px 0;te
 <table style="width:100%;border:none;margin:10px;" cellspacing="0" cellpadding="0">
   <tr>
 	<td>
-	
-	{ Description here...}
+	Enum | Succ | Pred example
 	</td>
   </tr>
 </table>
 	
 <pre><span id="code" class="language-css">Smart pascal source code</span><br>
 <code class="delphi" style="background-color: #FFFEEB;">
-{paste PASCAL code here...}
+  type
+    TEnum = (enOne, enTwo, enThree);
+
+  var
+    e: TEnum = enTwo;
+
+  WriteLn('Ord: ' + IntToStr(Ord(e)));
+  WriteLn('High: ' + IntToStr(Ord(High(e))));
+  WriteLn('Low: ' + IntToStr(Ord(Low(e))));
+
+  Inc(e); // supported
+  WriteLn(Ord(e));
+  Dec(e); // supported
+  WriteLn(Ord(e));
+
+  WriteLn(Succ(e));
+  WriteLn(Pred(e));
+
+  for e := enOne to enThree do
+    WriteLn(e);
+    WriteLn('');
+
+  for e := Low(TEnum) to High(TEnum) do
+    WriteLn(e);
+    WriteLn('');
+
+  { <<< CONSOLE OUTPUTS >>>
+    Ord: 1
+    High: 2
+    Low: 0
+    2
+    1
+    2
+    0
+    012
+    012
+  }
 
 </code></pre>
 <button type="button" id="checkoutbutton">Show JS code</button>
 <div id="widget" style="display:none;">
 <pre>
 <code class="javascript">
-{paste JS code here...}
+  var e = 0;
+  /// TEnum enumeration
+  ///  [line: 40, column: 5, file: uMain]
+  var TEnum = [ "enOne", "enTwo", "enThree" ];
+  e = 1;
+  WriteLn(("Ord: "+(e).toString()));
+  WriteLn("High: 2");
+  WriteLn("Low: 0");
+  ++e;
+  WriteLn(e);
+  --e;
+  WriteLn(e);
+  WriteLn((e+1));
+  WriteLn((e-1));
+  for(e=0;e<=2;e++) {
+	 WriteLn(e);
+  }
+  WriteLn("");
+  for(e=0;e<=2;e++) {
+	 WriteLn(e);
+  }
+  WriteLn("");
+
 
 </code></pre></div>
 </div>

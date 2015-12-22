@@ -50,7 +50,7 @@ width: 100%;background: #e18728;font-family: 'PT Serif', serif;padding: 5px 0;te
 <table style="width:100%;border:none;margin:0px;" cellspacing="0" cellpadding="0"> 
   <tr>
     <td class="topichead" style="text-align:left;">
-      <h1 class="p_Heading1" style="page-break-after: avoid;"><span class="f_Heading1">Pascal To Javascript</span></h1>
+      <h1 class="p_Heading1" style="page-break-after: avoid;"><span class="f_Heading1">Empty body</span></h1>
     </td>
     <td class="topichead" id="idnav">
       <a href="hm_pas2js015.htm"><span class="hmbtnprev"></span></a>
@@ -66,22 +66,113 @@ width: 100%;background: #e18728;font-family: 'PT Serif', serif;padding: 5px 0;te
 <table style="width:100%;border:none;margin:10px;" cellspacing="0" cellpadding="0">
   <tr>
 	<td>
-	
-	{ Description here...}
+	Empty body
 	</td>
   </tr>
 </table>
 	
 <pre><span id="code" class="language-css">Smart pascal source code</span><br>
 <code class="delphi" style="background-color: #FFFEEB;">
-{paste PASCAL code here...}
+type
+  TTest = class
+    function Test: Integer; empty;
+    function Virt: String; virtual; empty;
+    method Proc; empty;
+  end;
 
+type
+  TSub = class(TTest)
+    function Virt: String; override;
+    begin
+      WriteLn('here');
+      Result := '[' + inherited Virt + ']';
+    end;
+  end;
+  
+{ main.pas }  
+  var t := new TTest;
+
+  WriteLn(t.Test);
+  WriteLn('-' + t.Virt + '-');
+  t.Proc;
+
+  t := new TSub;
+
+  WriteLn(t.Test);
+  WriteLn('-' + t.Virt + '-');
+  t.Proc;
+
+  { <<< CONSOLE OUTPUTS >>>
+    0
+    --
+    0
+    here
+    -[]-
+  }
 </code></pre>
 <button type="button" id="checkoutbutton">Show JS code</button>
 <div id="widget" style="display:none;">
 <pre>
 <code class="javascript">
-{paste JS code here...}
+      var t = null;
+      t = TObject.Create($New(TTest));
+      WriteLn(TTest.Test(t));
+      WriteLn(("-"+TTest.Virt$(t)+"-"));
+      THelper$proc(t);
+      t = TObject.Create($New(TSub));
+      WriteLn(TTest.Test(t));
+      WriteLn(("-"+TTest.Virt$(t)+"-"));
+      THelper$proc(t);
+/// TTest = class (TObject)
+///  [line: 35, column: 4, file: uMain]
+var TTest = {
+   $ClassName:"TTest",$Parent:TObject
+   ,$Init:function ($) {
+      TObject.$Init($);
+   }
+   /// function TTest.Test() : Integer
+   ///  [line: 36, column: 16, file: uMain]
+   ,Test:function(Self) {
+      var Result = 0;
+      /* null */
+return Result
+   }
+   /// function TTest.Virt() : String
+   ///  [line: 37, column: 16, file: uMain]
+   ,Virt:function(Self) {
+      var Result = "";
+      /* null */
+return Result
+   }
+   ,Destroy:TObject.Destroy
+   ,Virt$:function($){return $.ClassType.Virt($)}
+};
+/// TSub = class (TTest)
+///  [line: 42, column: 4, file: uMain]
+var TSub = {
+   $ClassName:"TSub",$Parent:TTest
+   ,$Init:function ($) {
+      TTest.$Init($);
+   }
+   /// function TSub.Virt() : String
+   ///  [line: 43, column: 16, file: uMain]
+   ,Virt:function(Self) {
+      var Result = "";
+      WriteLn("here");
+      Result = "["+TTest.Virt(Self)+"]";
+      return Result
+   }
+   ,Destroy:TObject.Destroy
+   ,Virt$:function($){return $.ClassType.Virt($)}
+};
+function WriteLn(value) {
+    if (window.console) { window.console.log(value); } };
+/// procedure THelper.proc(Self: TObject)
+///  [line: 303, column: 42, file: SmartCL.System.Lite]
+function THelper$proc(Self$1) {
+   /* null */
+}
+ 
 
 </code></pre></div>
 </div>

@@ -50,7 +50,7 @@ width: 100%;background: #e18728;font-family: 'PT Serif', serif;padding: 5px 0;te
 <table style="width:100%;border:none;margin:0px;" cellspacing="0" cellpadding="0"> 
   <tr>
     <td class="topichead" style="text-align:left;">
-      <h1 class="p_Heading1" style="page-break-after: avoid;"><span class="f_Heading1">Pascal To Javascript</span></h1>
+      <h1 class="p_Heading1" style="page-break-after: avoid;"><span class="f_Heading1">Exception handling</span></h1>
     </td>
     <td class="topichead" id="idnav">
       <a href="hm_pas2js015.htm"><span class="hmbtnprev"></span></a>
@@ -66,22 +66,171 @@ width: 100%;background: #e18728;font-family: 'PT Serif', serif;padding: 5px 0;te
 <table style="width:100%;border:none;margin:10px;" cellspacing="0" cellpadding="0">
   <tr>
 	<td>
-	
-	{ Description here...}
+	Exception handling
 	</td>
   </tr>
 </table>
 	
 <pre><span id="code" class="language-css">Smart pascal source code</span><br>
 <code class="delphi" style="background-color: #FFFEEB;">
-{paste PASCAL code here...}
+type
+  MyException = class(Exception);
+
+type
+  OtherException = class(Exception)
+  end;
+
+{ main.pas }
+
+Begin
+
+  try
+    raise MyException.Create('exception message');
+  except
+    on e: MyException do
+      WriteLn('MyException: ' + e.Message);
+    on e: OtherException do
+      WriteLn('OtherException: ' + e.Message);
+    else
+      WriteLn('Else');
+  end;
+
+  try
+    raise OtherException.Create('exception message');
+  except
+    on e: MyException do
+      WriteLn('MyException: ' + e.Message);
+    on e: OtherException do
+      WriteLn('OtherException: ' + e.Message);
+    else
+      WriteLn('Else');
+  end;
+
+  try
+    raise Exception.Create('exception message 1');
+  except
+    on e: MyException do
+      WriteLn('MyException: ' + e.Message);
+    on e: OtherException do
+      WriteLn('OtherException: ' + e.Message);
+    else
+      WriteLn('Else');
+  end;
+
+  try
+    raise OtherException.Create('exception message 2');
+  except
+    on e: Exception do
+      WriteLn('MyException: ' + e.Message);
+    else
+      WriteLn('Invisible');
+  end;
+
+  var
+  t := True;
+  try
+    try
+      if t then
+        raise Exception.Create('exception message 3');
+      WriteLn('Invisible');
+    finally
+      WriteLn('Finally');
+    end;
+    WriteLn('Invisible');
+  except
+    WriteLn('Except');
+  end;
+
+  { <<< CONSOLE OUTPUTS >>>
+    MyException: exception message
+    OtherException: exception message
+    Else
+    MyException: exception message 2
+    Finally
+    Except
+  }
+
+end;
 
 </code></pre>
 <button type="button" id="checkoutbutton">Show JS code</button>
 <div id="widget" style="display:none;">
 <pre>
 <code class="javascript">
-{paste JS code here...}
+      var t = false;
+      try {
+         throw Exception.Create($New(MyException),"exception message");
+      } catch ($e) {
+         if ($Is($e,MyException)) {
+            var e = $W($e);
+            WriteLn(("MyException: "+e.FMessage))         }
+         else if ($Is($e,OtherException)) {
+            var e$1 = $W($e);
+            WriteLn(("OtherException: "+e$1.FMessage))         }
+         else {
+            WriteLn("Else")         }
+      }
+      try {
+         throw Exception.Create($New(OtherException),"exception message");
+      } catch ($e) {
+         if ($Is($e,MyException)) {
+            var e$2 = $W($e);
+            WriteLn(("MyException: "+e$2.FMessage))         }
+         else if ($Is($e,OtherException)) {
+            var e$3 = $W($e);
+            WriteLn(("OtherException: "+e$3.FMessage))         }
+         else {
+            WriteLn("Else")         }
+      }
+      try {
+         throw Exception.Create($New(Exception),"exception message 1");
+      } catch ($e) {
+         if ($Is($e,MyException)) {
+            var e$4 = $W($e);
+            WriteLn(("MyException: "+e$4.FMessage))         }
+         else if ($Is($e,OtherException)) {
+            var e$5 = $W($e);
+            WriteLn(("OtherException: "+e$5.FMessage))         }
+         else {
+            WriteLn("Else")         }
+      }
+      try {
+         throw Exception.Create($New(OtherException),"exception message 2");
+      } catch ($e) {
+         var e$6 = $W($e);
+         WriteLn(("MyException: "+e$6.FMessage))      }
+      t = true;
+      try {
+         try {
+            if (t) {
+               throw Exception.Create($New(Exception),"exception message 3");
+            }
+            WriteLn("Invisible");
+         } finally {
+            WriteLn("Finally");
+         }
+         WriteLn("Invisible");
+      } catch ($e) {
+         WriteLn("Except");
+      }
+/// OtherException = class (Exception)
+///  [line: 38, column: 3, file: uMain]
+var OtherException = {
+   $ClassName:"OtherException",$Parent:Exception
+   ,$Init:function ($) {
+      Exception.$Init($);
+   }
+   ,Destroy:Exception.Destroy
+};
+/// MyException = class (Exception)
+///  [line: 35, column: 3, file: uMain]
+var MyException = {
+   $ClassName:"MyException",$Parent:Exception
+   ,$Init:function ($) {
+      Exception.$Init($);
+   }
+   ,Destroy:Exception.Destroy
+};	  
 
 </code></pre></div>
 </div>
