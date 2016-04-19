@@ -50,12 +50,12 @@ width: 100%;background: #e18728;font-family: 'PT Serif', serif;padding: 5px 0;te
 <table style="width:100%;border:none;margin:0px;" cellspacing="0" cellpadding="0"> 
   <tr>
     <td class="topichead" style="text-align:left;">
-      <h1 class="p_Heading1" style="page-break-after: avoid;"><span class="f_Heading1">Pascal To Javascript</span></h1>
+      <h1 class="p_Heading1" style="page-break-after: avoid;"><span class="f_Heading1">for step overflow</span></h1>
     </td>
     <td class="topichead" id="idnav">
-      <a href="hm_pas2js015.htm"><span class="hmbtnprev"></span></a>
+      <a href="hm_pas2js165.htm"><span class="hmbtnprev"></span></a>
       <a href="index.htm" title="Parent Chapter"><span class="hmbtntop"></span></a>
-      <a href="hm_pas2js017.htm"><span class="hmbtnnext"></span></a>
+      <a href="hm_pas2js167.htm"><span class="hmbtnnext"></span></a>
      </td>  
   </tr>  
 </table>
@@ -66,23 +66,85 @@ width: 100%;background: #e18728;font-family: 'PT Serif', serif;padding: 5px 0;te
 <table style="width:100%;border:none;margin:10px;" cellspacing="0" cellpadding="0">
   <tr>
 	<td>
-	
-	{ Description here...}
+	for step overflow
 	</td>
   </tr>
 </table>
 	
 <pre><span id="code" class="language-css">Smart pascal source code</span><br>
 <code class="delphi" style="background-color: #FFFEEB;">
-{paste PASCAL code here...}
+var i: Integer;
+
+for i := Low(i) to High(i)step High(i) div 10 do
+  WriteLn(i);
+
+for i := High(i) downto Low(i)step High(i) div 10 do
+  WriteLn(i);
+
+{<<< RESULT - CONSOLE LOG >>>
+-----------------------------
+-9223372036854775808
+-8301034833169298228
+-7378697629483820648
+-6456360425798343068
+-5534023222112865488
+-4611686018427387908
+-3689348814741910328
+-2767011611056432748
+-1844674407370955168
+-922337203685477588
+-8
+922337203685477572
+1844674407370955152
+2767011611056432732
+3689348814741910312
+4611686018427387892
+5534023222112865472
+6456360425798343052
+7378697629483820632
+8301034833169298212
+9223372036854775792
+9223372036854775807
+8301034833169298227
+7378697629483820647
+6456360425798343067
+5534023222112865487
+4611686018427387907
+3689348814741910327
+2767011611056432747
+1844674407370955167
+922337203685477587
+7
+-922337203685477573
+-1844674407370955153
+-2767011611056432733
+-3689348814741910313
+-4611686018427387893
+-5534023222112865473
+-6456360425798343053
+-7378697629483820633
+-8301034833169298213
+-9223372036854775793
+-----------------------------
+{<<<<<<<<< THE END >>>>>>>>>}
 
 </code></pre>
 <button type="button" id="checkoutbutton">Show JS code</button>
 <div id="widget" style="display:none;">
 <pre>
 <code class="javascript">
-{paste JS code here...}
+function WriteLn(value) {
+    if (window.console) { window.console.log(value); } };
+var i = 0;
 
+/* <<< main JS >>> */
+
+   for(i=-9223372036854775808;i<=9223372036854775807;i+=922337203685477580) {
+      WriteLn(i);
+   }
+   for(i=9223372036854775807;i>=(-9223372036854775808);i-=922337203685477580) {
+      WriteLn(i);
+   }
 </code></pre></div>
 </div>
 </body>

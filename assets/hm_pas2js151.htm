@@ -50,12 +50,12 @@ width: 100%;background: #e18728;font-family: 'PT Serif', serif;padding: 5px 0;te
 <table style="width:100%;border:none;margin:0px;" cellspacing="0" cellpadding="0"> 
   <tr>
     <td class="topichead" style="text-align:left;">
-      <h1 class="p_Heading1" style="page-break-after: avoid;"><span class="f_Heading1">Pascal To Javascript</span></h1>
+      <h1 class="p_Heading1" style="page-break-after: avoid;"><span class="f_Heading1">var parameter</span></h1>
     </td>
     <td class="topichead" id="idnav">
-      <a href="hm_pas2js015.htm"><span class="hmbtnprev"></span></a>
+      <a href="hm_pas2js150.htm"><span class="hmbtnprev"></span></a>
       <a href="index.htm" title="Parent Chapter"><span class="hmbtntop"></span></a>
-      <a href="hm_pas2js017.htm"><span class="hmbtnnext"></span></a>
+      <a href="hm_pas2js152.htm"><span class="hmbtnnext"></span></a>
      </td>  
   </tr>  
 </table>
@@ -66,22 +66,126 @@ width: 100%;background: #e18728;font-family: 'PT Serif', serif;padding: 5px 0;te
 <table style="width:100%;border:none;margin:10px;" cellspacing="0" cellpadding="0">
   <tr>
 	<td>
-	
-	{ Description here...}
+	Pass as Var-parameter
 	</td>
   </tr>
 </table>
 	
 <pre><span id="code" class="language-css">Smart pascal source code</span><br>
 <code class="delphi" style="background-color: #FFFEEB;">
-{paste PASCAL code here...}
+type
+  Toto = Class(TObject)
+  public
+    s: String;
+    i: Integer;
+    f: Float;
+    b: Boolean;
+    o: TObject;
+  end;
+
+var
+  obj: Toto;
+
+procedure tataS(var chaine: String);
+begin
+  chaine := 'tata';
+end;
+
+procedure tataI(var int: Integer);
+begin
+  int := 456;
+end;
+
+procedure tataF(var fl: Float);
+begin
+  fl := 4.5;
+end;
+
+procedure tataB(var b: Boolean);
+begin
+  b := True;
+end;
+
+procedure tataO(var o: TObject);
+begin
+  o := nil;
+end;
+
+{------ main.pas ------}
+
+Begin
+  obj := Toto.Create;
+  obj.s := 'toto';
+  obj.i := 123;
+  obj.f := 1.5;
+  obj.o := obj;
+
+  WriteLn(obj.s);
+  { <<< CONSOLE OUTPUTS >>>
+    toto
+  }
+
+/*
+  tataS(obj.s);
+  // Syntax Error: Only a variable can be be passed as Var-parameter
+  tataI(obj.i);
+  // Syntax Error: Only a variable can be be passed as Var-parameter
+  tataF(obj.f);
+  // Syntax Error: Only a variable can be be passed as Var-parameter
+  tataB(obj.b);
+  // Syntax Error: Only a variable can be be passed as Var-parameter
+  tataO(obj.o);
+  // Syntax Error: Only a variable can be be passed as Var-parameter
+*/
+
+  WriteLn(obj.s);
+  WriteLn(obj.i);
+  WriteLn(obj.f);
+  WriteLn(obj.b);
+  if obj.o <> nil then
+    WriteLn('bug');
+
+  { <<< CONSOLE OUTPUTS >>>
+    toto
+    123
+    1.5
+    false
+    bug
+  }
 
 </code></pre>
 <button type="button" id="checkoutbutton">Show JS code</button>
 <div id="widget" style="display:none;">
 <pre>
 <code class="javascript">
-{paste JS code here...}
+      obj = TObject.Create($New(Toto));
+      obj.s = "toto";
+      obj.i = 123;
+      obj.f = 1.5;
+      obj.o = obj;
+      WriteLn(obj.s);
+      WriteLn(obj.s);
+      WriteLn(obj.i);
+      WriteLn(obj.f);
+      WriteLn(obj.b);
+      if (obj.o!==null) {
+         WriteLn("bug");
+      }
+	  
+/// Toto = class (TObject)
+///  [line: 34, column: 6, file: uMain]
+var Toto = {
+   $ClassName:"Toto",$Parent:TObject
+   ,$Init:function ($) {
+      TObject.$Init($);
+      $.s = "";
+      $.i = 0;
+      $.f = 0;
+      $.b = false;
+      $.o = null;
+   }
+   ,Destroy:TObject.Destroy
+};  
 
 </code></pre></div>
 </div>

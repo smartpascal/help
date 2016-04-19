@@ -50,12 +50,12 @@ width: 100%;background: #e18728;font-family: 'PT Serif', serif;padding: 5px 0;te
 <table style="width:100%;border:none;margin:0px;" cellspacing="0" cellpadding="0"> 
   <tr>
     <td class="topichead" style="text-align:left;">
-      <h1 class="p_Heading1" style="page-break-after: avoid;"><span class="f_Heading1">Pascal To Javascript</span></h1>
+      <h1 class="p_Heading1" style="page-break-after: avoid;"><span class="f_Heading1">format string | float</span></h1>
     </td>
     <td class="topichead" id="idnav">
-      <a href="hm_pas2js015.htm"><span class="hmbtnprev"></span></a>
+      <a href="hm_pas2js175.htm"><span class="hmbtnprev"></span></a>
       <a href="index.htm" title="Parent Chapter"><span class="hmbtntop"></span></a>
-      <a href="hm_pas2js017.htm"><span class="hmbtnnext"></span></a>
+      <a href="hm_pas2js177.htm"><span class="hmbtnnext"></span></a>
      </td>  
   </tr>  
 </table>
@@ -66,22 +66,66 @@ width: 100%;background: #e18728;font-family: 'PT Serif', serif;padding: 5px 0;te
 <table style="width:100%;border:none;margin:10px;" cellspacing="0" cellpadding="0">
   <tr>
 	<td>
-	
-	{ Description here...}
+	format float
 	</td>
   </tr>
 </table>
 	
 <pre><span id="code" class="language-css">Smart pascal source code</span><br>
 <code class="delphi" style="background-color: #FFFEEB;">
-{paste PASCAL code here...}
+WriteLn(Format('hello', []));
+WriteLn(Format('hello %s', ['world']));
+WriteLn(Format('hello %s %d', ['world', 123]));
+WriteLn(Format('hello %s %d %.1f', ['world', 123, 12.5]));
 
+var
+s = 'WORLD';
+
+var
+i = 456;
+
+var
+f = 3.14;
+
+WriteLn(Format('hello %s', [s]));
+WriteLn(Format('hello %s %d', [s, i]));
+WriteLn(Format('hello %s %d %f', [s, i, f]));
+
+{<<< RESULT - CONSOLE LOG >>>
+-----------------------------
+hello
+hello world
+hello world 123
+hello world 123 12.5
+hello WORLD
+hello WORLD 456
+hello WORLD 456 3.14
+
+-----------------------------
+{<<<<<<<<< THE END >>>>>>>>>}
 </code></pre>
 <button type="button" id="checkoutbutton">Show JS code</button>
 <div id="widget" style="display:none;">
 <pre>
 <code class="javascript">
-{paste JS code here...}
+function WriteLn(value) {
+    if (window.console) { window.console.log(value); } };
+var s = "",
+   i = 0,
+   f = 0;
+
+/* <<< main JS >>> */
+
+   WriteLn("hello");
+   WriteLn("hello world");
+   WriteLn("hello world 123");
+   WriteLn("hello world 123 12.5");
+   s = "WORLD";
+   i = 456;
+   f = 3.14;
+   WriteLn(("hello "+s.toString()));
+   WriteLn(("hello "+s.toString()+" "+i.toString()));
+   WriteLn(("hello "+s.toString()+" "+i.toString()+" "+f.toString()));
 
 </code></pre></div>
 </div>

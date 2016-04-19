@@ -50,12 +50,12 @@ width: 100%;background: #e18728;font-family: 'PT Serif', serif;padding: 5px 0;te
 <table style="width:100%;border:none;margin:0px;" cellspacing="0" cellpadding="0"> 
   <tr>
     <td class="topichead" style="text-align:left;">
-      <h1 class="p_Heading1" style="page-break-after: avoid;"><span class="f_Heading1">Pascal To Javascript</span></h1>
+      <h1 class="p_Heading1" style="page-break-after: avoid;"><span class="f_Heading1">for.. in Str Global</span></h1>
     </td>
     <td class="topichead" id="idnav">
-      <a href="hm_pas2js015.htm"><span class="hmbtnprev"></span></a>
+      <a href="hm_pas2js161.htm"><span class="hmbtnprev"></span></a>
       <a href="index.htm" title="Parent Chapter"><span class="hmbtntop"></span></a>
-      <a href="hm_pas2js017.htm"><span class="hmbtnnext"></span></a>
+      <a href="hm_pas2js163.htm"><span class="hmbtnnext"></span></a>
      </td>  
   </tr>  
 </table>
@@ -66,22 +66,64 @@ width: 100%;background: #e18728;font-family: 'PT Serif', serif;padding: 5px 0;te
 <table style="width:100%;border:none;margin:10px;" cellspacing="0" cellpadding="0">
   <tr>
 	<td>
-	
-	{ Description here...}
+	for.. in Str Global
 	</td>
   </tr>
 </table>
 	
 <pre><span id="code" class="language-css">Smart pascal source code</span><br>
 <code class="delphi" style="background-color: #FFFEEB;">
-{paste PASCAL code here...}
+var
+s := 'banane';
 
+var
+ch := '';
+for ch in s do
+begin
+  if ch = 'n' then
+    Break;
+  WriteLn(ch);
+end;
+
+{<<< RESULT - CONSOLE LOG >>>
+-----------------------------b
+a
+-----------------------------
+{<<<<<<<<< THE END >>>>>>>>>}
 </code></pre>
 <button type="button" id="checkoutbutton">Show JS code</button>
 <div id="widget" style="display:none;">
 <pre>
 <code class="javascript">
-{paste JS code here...}
+// inspired from 
+// https://developer.mozilla.org/en/JavaScript/Reference/Global_Objects/String/charCodeAt
+function $uniCharAt(str, idx) {
+    var c = str.charCodeAt(idx);
+    if (0xD800 <= c && c <= 0xDBFF) { // High surrogate
+        return str.substr(idx, 2);
+    }
+    if (0xDC00 <= c && c <= 0xDFFF) { // Low surrogate
+        return null;
+    }
+    return str.charAt(idx);
+}function WriteLn(value) {
+    if (window.console) { window.console.log(value); } };
+var s = "",
+   ch = "";
+
+/* <<< main JS >>> */
+
+s = "banane";
+ch = "";
+for (var $temp1 = 0; $temp1 < s.length; $temp1++) {
+	ch = $uniCharAt(s, $temp1);
+	if (!ch)
+		continue;
+	if (ch == "n") {
+		break;
+	}
+	WriteLn(ch);
+}
 
 </code></pre></div>
 </div>

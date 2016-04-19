@@ -50,12 +50,12 @@ width: 100%;background: #e18728;font-family: 'PT Serif', serif;padding: 5px 0;te
 <table style="width:100%;border:none;margin:0px;" cellspacing="0" cellpadding="0"> 
   <tr>
     <td class="topichead" style="text-align:left;">
-      <h1 class="p_Heading1" style="page-break-after: avoid;"><span class="f_Heading1">Pascal To Javascript</span></h1>
+      <h1 class="p_Heading1" style="page-break-after: avoid;"><span class="f_Heading1">Function Pointer as byRef</span></h1>
     </td>
     <td class="topichead" id="idnav">
-      <a href="hm_pas2js015.htm"><span class="hmbtnprev"></span></a>
+      <a href="hm_pas2js198.htm"><span class="hmbtnprev"></span></a>
       <a href="index.htm" title="Parent Chapter"><span class="hmbtntop"></span></a>
-      <a href="hm_pas2js017.htm"><span class="hmbtnnext"></span></a>
+      <a href="hm_pas2js200.htm"><span class="hmbtnnext"></span></a>
      </td>  
   </tr>  
 </table>
@@ -66,23 +66,88 @@ width: 100%;background: #e18728;font-family: 'PT Serif', serif;padding: 5px 0;te
 <table style="width:100%;border:none;margin:10px;" cellspacing="0" cellpadding="0">
   <tr>
 	<td>
-	
-	{ Description here...}
+	Function Pointer as byRef
 	</td>
   </tr>
 </table>
 	
 <pre><span id="code" class="language-css">Smart pascal source code</span><br>
 <code class="delphi" style="background-color: #FFFEEB;">
-{paste PASCAL code here...}
+Function Func(Const AString: String): Integer;
+Begin
+  Result := 0;
+End;
 
+Var i := 0;
+var a: Array [0 .. 255] Of Integer;
+
+a[Func(IntToStr(i))] := 1;
+
+For i := 1 to 1000 do
+  Inc(a[Func(IntToStr(i)) And 255]);
+
+For i := 0 to 4 do
+  WriteLn(a[i]);
+
+{<<< RESULT - CONSOLE LOG >>>
+-----------------------------
+1001
+0
+0
+0
+0
+-----------------------------
+{<<<<<<<<< THE END >>>>>>>>>}
 </code></pre>
 <button type="button" id="checkoutbutton">Show JS code</button>
 <div id="widget" style="display:none;">
 <pre>
 <code class="javascript">
-{paste JS code here...}
+var TObject={
+	$ClassName: "TObject",
+	$Parent: null,
+	ClassName: function (s) { return s.$ClassName },
+	ClassType: function (s) { return s },
+	ClassParent: function (s) { return s.$Parent },
+	$Init: function () {},
+	Create: function (s) { return s },
+	Destroy: function (s) { for (var prop in s) if (s.hasOwnProperty(prop)) delete s.prop },
+	Destroy$: function(s) { return s.ClassType.Destroy(s) },
+	Free: function (s) { if (s!==null) s.ClassType.Destroy(s) }
+}
+var Exception={
+	$ClassName: "Exception",
+	$Parent: TObject,
+	$Init: function () { FMessage="" },
+	Create: function (s,Msg) { s.FMessage=Msg; return s }
+}
+function $New(c) { var i={ClassType:c}; c.$Init(i); return i }
+function $Idx(i,l,h,z) {
+	if (i<l) throw Exception.Create($New(Exception),"Lower bound exceeded! Index "+i.toString()+z);
+	if (i>h) throw Exception.Create($New(Exception),"Upper bound exceeded! Index "+i.toString()+z);
+	return i-l;
+}
+function WriteLn(value) {
+    if (window.console) { window.console.log(value); } };
+function Func(AString) {
+   return 0;
+};
+var i = 0,
+   a = function () {
+      for (var r=[],i=0; i<256; i++) r.push(0);
+      return r
+   }();
 
+/* <<< main JS >>> */
+
+i = 0;
+a[$Idx(Func(i.toString()), 0, 255, "")] = 1;
+for (i = 1; i <= 1000; i++) {
+	++a[$Idx(Func(i.toString()) & 255, 0, 255, "")];
+}
+for (i = 0; i <= 4; i++) {
+	WriteLn(a[$Idx(i, 0, 255, "")]);
+}
 </code></pre></div>
 </div>
 </body>

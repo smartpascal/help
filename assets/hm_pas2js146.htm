@@ -50,12 +50,12 @@ width: 100%;background: #e18728;font-family: 'PT Serif', serif;padding: 5px 0;te
 <table style="width:100%;border:none;margin:0px;" cellspacing="0" cellpadding="0"> 
   <tr>
     <td class="topichead" style="text-align:left;">
-      <h1 class="p_Heading1" style="page-break-after: avoid;"><span class="f_Heading1">Pascal To Javascript</span></h1>
+      <h1 class="p_Heading1" style="page-break-after: avoid;"><span class="f_Heading1">Exit constructor</span></h1>
     </td>
     <td class="topichead" id="idnav">
-      <a href="hm_pas2js015.htm"><span class="hmbtnprev"></span></a>
+      <a href="hm_pas2js145.htm"><span class="hmbtnprev"></span></a>
       <a href="index.htm" title="Parent Chapter"><span class="hmbtntop"></span></a>
-      <a href="hm_pas2js017.htm"><span class="hmbtnnext"></span></a>
+      <a href="hm_pas2js147.htm"><span class="hmbtnnext"></span></a>
      </td>  
   </tr>  
 </table>
@@ -66,22 +66,67 @@ width: 100%;background: #e18728;font-family: 'PT Serif', serif;padding: 5px 0;te
 <table style="width:100%;border:none;margin:10px;" cellspacing="0" cellpadding="0">
   <tr>
 	<td>
-	
-	{ Description here...}
+	Exit Constructor
 	</td>
   </tr>
 </table>
 	
 <pre><span id="code" class="language-css">Smart pascal source code</span><br>
 <code class="delphi" style="background-color: #FFFEEB;">
-{paste PASCAL code here...}
+  type
+    TTest = class
+      Field: Integer;
+      constructor Create(a: Integer);
+      begin
+        if a <= 0 then
+          Exit;
+        Field := a;
+      end;
+    end;
+
+  var
+    t: TTest;
+
+  t := new TTest(1);
+  WriteLn(t.Field);
+
+  t := new TTest(-1);
+  WriteLn(t.Field);
+
+  { <<< CONSOLE OUTPUTS >>>
+    1
+    0
+  }
 
 </code></pre>
 <button type="button" id="checkoutbutton">Show JS code</button>
 <div id="widget" style="display:none;">
 <pre>
 <code class="javascript">
-{paste JS code here...}
+      var t = null;
+      /// TTest = class (TObject)
+      ///  [line: 40, column: 4, file: uMain]
+      var TTest = {
+         $ClassName:"TTest",$Parent:TObject
+         ,$Init:function ($) {
+            TObject.$Init($);
+            $.Field = 0;
+         }
+         /// constructor TTest.Create(a: Integer)
+         ///  [line: 42, column: 19, file: uMain]
+         ,Create$5:function(Self, a) {
+            if (a<=0) {
+               return Self;
+            }
+            Self.Field = a;
+            return Self
+         }
+         ,Destroy:TObject.Destroy
+      };
+      t = TTest.Create$5($New(TTest),1);
+      WriteLn(t.Field);
+      t = TTest.Create$5($New(TTest),-1);
+      WriteLn(t.Field);
 
 </code></pre></div>
 </div>

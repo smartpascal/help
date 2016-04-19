@@ -50,12 +50,12 @@ width: 100%;background: #e18728;font-family: 'PT Serif', serif;padding: 5px 0;te
 <table style="width:100%;border:none;margin:0px;" cellspacing="0" cellpadding="0"> 
   <tr>
     <td class="topichead" style="text-align:left;">
-      <h1 class="p_Heading1" style="page-break-after: avoid;"><span class="f_Heading1">Pascal To Javascript</span></h1>
+      <h1 class="p_Heading1" style="page-break-after: avoid;"><span class="f_Heading1">Field typed default | default field</span></h1>
     </td>
     <td class="topichead" id="idnav">
-      <a href="hm_pas2js015.htm"><span class="hmbtnprev"></span></a>
+      <a href="hm_pas2js153.htm"><span class="hmbtnprev"></span></a>
       <a href="index.htm" title="Parent Chapter"><span class="hmbtntop"></span></a>
-      <a href="hm_pas2js017.htm"><span class="hmbtnnext"></span></a>
+      <a href="hm_pas2js155.htm"><span class="hmbtnnext"></span></a>
      </td>  
   </tr>  
 </table>
@@ -66,22 +66,80 @@ width: 100%;background: #e18728;font-family: 'PT Serif', serif;padding: 5px 0;te
 <table style="width:100%;border:none;margin:10px;" cellspacing="0" cellpadding="0">
   <tr>
 	<td>
-	
-	{ Description here...}
+	Field typed default | default field
 	</td>
   </tr>
 </table>
 	
 <pre><span id="code" class="language-css">Smart pascal source code</span><br>
 <code class="delphi" style="background-color: #FFFEEB;">
-{paste PASCAL code here...}
+const
+  f: Float = 1; // OK
+
+Type
+  TObj = Class
+    f1: Float := 1;
+    f2 := f;
+  End;
+
+Type
+  TRec = Record
+    f1: Float := 2;
+    f2 := f + f;
+  End;
+
+  {----- main.pas -----}
+
+Begin
+  WriteLn(FloatToStr(TObj.Create.f1));
+  WriteLn(FloatToStr(TObj.Create.f2));
+
+  var r: TRec;
+
+  WriteLn(FloatToStr(r.f1));
+  WriteLn(FloatToStr(r.f2));
+
+  { <<< CONSOLE OUTPUTS >>>
+    1
+    1
+    2
+    2
+  }
 
 </code></pre>
 <button type="button" id="checkoutbutton">Show JS code</button>
 <div id="widget" style="display:none;">
 <pre>
 <code class="javascript">
-{paste JS code here...}
+      var r = {f1:2,f2:2};
+      WriteLn(FloatToStr$_Float_(TObject.Create($New(TObj)).f1$1));
+      WriteLn(FloatToStr$_Float_(TObject.Create($New(TObj)).f2$1));
+      WriteLn(FloatToStr$_Float_(r.f1));
+      WriteLn(FloatToStr$_Float_(r.f2));
+	  
+/// TRec = record
+///  [line: 43, column: 1, file: uMain]
+function Copy$TRec(s,d) {
+   d.f1=s.f1;
+   d.f2=s.f2;
+   return d;
+}
+function Clone$TRec($) {
+   return {
+      f1:$.f1,
+      f2:$.f2
+   }
+}
+/// TObj = class (TObject)
+///  [line: 37, column: 1, file: uMain]
+var TObj = {
+   $ClassName:"TObj",$Parent:TObject
+   ,$Init:function ($) {
+      TObject.$Init($);
+      $.f1$1 = $.f2$1 = 1;
+   }
+   ,Destroy:TObject.Destroy
+};	  
 
 </code></pre></div>
 </div>

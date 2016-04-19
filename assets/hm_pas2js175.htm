@@ -50,12 +50,12 @@ width: 100%;background: #e18728;font-family: 'PT Serif', serif;padding: 5px 0;te
 <table style="width:100%;border:none;margin:0px;" cellspacing="0" cellpadding="0"> 
   <tr>
     <td class="topichead" style="text-align:left;">
-      <h1 class="p_Heading1" style="page-break-after: avoid;"><span class="f_Heading1">Pascal To Javascript</span></h1>
+      <h1 class="p_Heading1" style="page-break-after: avoid;"><span class="f_Heading1">format integer</span></h1>
     </td>
     <td class="topichead" id="idnav">
-      <a href="hm_pas2js015.htm"><span class="hmbtnprev"></span></a>
+      <a href="hm_pas2js174.htm"><span class="hmbtnprev"></span></a>
       <a href="index.htm" title="Parent Chapter"><span class="hmbtntop"></span></a>
-      <a href="hm_pas2js017.htm"><span class="hmbtnnext"></span></a>
+      <a href="hm_pas2js176.htm"><span class="hmbtnnext"></span></a>
      </td>  
   </tr>  
 </table>
@@ -66,23 +66,38 @@ width: 100%;background: #e18728;font-family: 'PT Serif', serif;padding: 5px 0;te
 <table style="width:100%;border:none;margin:10px;" cellspacing="0" cellpadding="0">
   <tr>
 	<td>
-	
-	{ Description here...}
+	format integer
 	</td>
   </tr>
 </table>
 	
 <pre><span id="code" class="language-css">Smart pascal source code</span><br>
 <code class="delphi" style="background-color: #FFFEEB;">
-{paste PASCAL code here...}
+procedure SetXY(const AX, AY, AValue: Integer);
+begin
+  WriteLn(Format('X = %d, Y = %d, Value = %d', [AX, AY, AValue]));
+end;
 
+SetXY(100, 100, StrToInt('12'));
+
+{<<< RESULT - CONSOLE LOG >>>
+-----------------------------
+X = 100, Y = 100, Value = 12
+-----------------------------
+{<<<<<<<<< THE END >>>>>>>>>}
 </code></pre>
 <button type="button" id="checkoutbutton">Show JS code</button>
 <div id="widget" style="display:none;">
 <pre>
 <code class="javascript">
-{paste JS code here...}
+function WriteLn(value) {
+    if (window.console) { window.console.log(value); } };
+function SetXY(AX, AY, AValue) {
+   WriteLn(("X = "+AX.toString()+", Y = "+AY.toString()+", Value = "+AValue.toString()));
+};
 
+/* <<< main JS >>> */
+   SetXY(100,100,12)
 </code></pre></div>
 </div>
 </body>

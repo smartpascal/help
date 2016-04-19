@@ -50,12 +50,12 @@ width: 100%;background: #e18728;font-family: 'PT Serif', serif;padding: 5px 0;te
 <table style="width:100%;border:none;margin:0px;" cellspacing="0" cellpadding="0"> 
   <tr>
     <td class="topichead" style="text-align:left;">
-      <h1 class="p_Heading1" style="page-break-after: avoid;"><span class="f_Heading1">Pascal To Javascript</span></h1>
+      <h1 class="p_Heading1" style="page-break-after: avoid;"><span class="f_Heading1">Function Pointer field no param</span></h1>
     </td>
     <td class="topichead" id="idnav">
-      <a href="hm_pas2js015.htm"><span class="hmbtnprev"></span></a>
+      <a href="hm_pas2js191.htm"><span class="hmbtnprev"></span></a>
       <a href="index.htm" title="Parent Chapter"><span class="hmbtntop"></span></a>
-      <a href="hm_pas2js017.htm"><span class="hmbtnnext"></span></a>
+      <a href="hm_pas2js193.htm"><span class="hmbtnnext"></span></a>
      </td>  
   </tr>  
 </table>
@@ -66,23 +66,150 @@ width: 100%;background: #e18728;font-family: 'PT Serif', serif;padding: 5px 0;te
 <table style="width:100%;border:none;margin:10px;" cellspacing="0" cellpadding="0">
   <tr>
 	<td>
-	
-	{ Description here...}
+	Function Pointer field no param
 	</td>
   </tr>
 </table>
 	
 <pre><span id="code" class="language-css">Smart pascal source code</span><br>
 <code class="delphi" style="background-color: #FFFEEB;">
-{paste PASCAL code here...}
+type
+  TOnGetValue = function: string of object;
 
+type
+  TTestClass = class
+  private
+    fOnGetValue: TOnGetValue;
+  public
+    function Get: string;
+    property OnGetValue: TOnGetValue read fOnGetValue write fOnGetValue;
+  end;
+
+function TTestClass.Get: string;
+begin
+  if Assigned(fOnGetValue) then
+    Result := fOnGetValue // LINE WITH COMPILE ERROR!
+  else
+    Result := 'event not assigned';
+end;
+
+type
+  TMainClass = class
+    function DoIt: string;
+    function GetValue: string;
+  end;
+
+function TMainClass.GetValue: string;
+begin
+  Result := 'passed';
+end;
+
+function TMainClass.DoIt: string;
+begin
+  var Test: TTestClass = TTestClass.Create;
+  try
+    Test.OnGetValue := GetValue;
+    Result := Test.Get;
+  finally
+    Test.free
+  end;
+end;
+
+begin
+  var M: TMainClass = TMainClass.Create;
+  WriteLn(M.DoIt);
+end;
+
+{<<< RESULT - CONSOLE LOG >>>
+-----------------------------
+Errors >>>>
+Hint: OF OBJECT modifier is legacy and ignored [line: 2, column: 37]
+Hint: "result" does not match case of declaration ("Result") [line: 28, column: 2]
+Hint: "result" does not match case of declaration ("Result") [line: 36, column: 2]
+Hint: "free" does not match case of declaration ("Free") [line: 38, column: 7]
+Result >>>>
+passed
+-----------------------------
+{<<<<<<<<< THE END >>>>>>>>>}
 </code></pre>
 <button type="button" id="checkoutbutton">Show JS code</button>
 <div id="widget" style="display:none;">
 <pre>
 <code class="javascript">
-{paste JS code here...}
+var TObject={
+	$ClassName: "TObject",
+	$Parent: null,
+	ClassName: function (s) { return s.$ClassName },
+	ClassType: function (s) { return s },
+	ClassParent: function (s) { return s.$Parent },
+	$Init: function () {},
+	Create: function (s) { return s },
+	Destroy: function (s) { for (var prop in s) if (s.hasOwnProperty(prop)) delete s.prop },
+	Destroy$: function(s) { return s.ClassType.Destroy(s) },
+	Free: function (s) { if (s!==null) s.ClassType.Destroy(s) }
+}
+var Exception={
+	$ClassName: "Exception",
+	$Parent: TObject,
+	$Init: function () { FMessage="" },
+	Create: function (s,Msg) { s.FMessage=Msg; return s }
+}
+function $New(c) { var i={ClassType:c}; c.$Init(i); return i }
+function $Event0(i,f) {
+	var li=i,lf=f;
+	return function() {
+		return lf.call(li,li)
+	}
+}
+function $CheckFunc(i,z) { if (i) return i; throw Exception.Create($New(Exception),"Function pointer is nil"+z); }
+function $Check(i,z) { if (i) return i; throw Exception.Create($New(Exception),"Object not instantiated"+z); }
+function WriteLn(value) {
+    if (window.console) { window.console.log(value); } };
+var TTestClass = {
+   $ClassName:"TTestClass",$Parent:TObject
+   ,$Init:function ($) {
+      TObject.$Init($);
+      $.fOnGetValue = null;
+   }
+   ,Get:function(Self) {
+      var Result = "";
+      if ($Check(Self,"").fOnGetValue) {
+         Result = $CheckFunc($Check(Self,"").fOnGetValue,"")();
+      } else {
+         Result = "event not assigned";
+      }
+      return Result
+   }
+   ,Destroy:TObject.Destroy
+};
+var TMainClass = {
+   $ClassName:"TMainClass",$Parent:TObject
+   ,$Init:function ($) {
+      TObject.$Init($);
+   }
+   ,DoIt:function(Self) {
+      var Result = "";
+      var Test = null;
+      Test = TObject.Create($New(TTestClass));
+      try {
+         $Check(Test,"").fOnGetValue = $Event0(Self,TMainClass.GetValue);
+         Result = TTestClass.Get(Test);
+      } finally {
+         TObject.Free(Test);
+      }
+      return Result
+   }
+   ,GetValue:function(Self) {
+      return "passed";
+   }
+   ,Destroy:TObject.Destroy
+};
+var M = null;
 
+/* <<< main JS >>> */
+
+   M = TObject.Create($New(TMainClass));
+   WriteLn(TMainClass.DoIt(M));
 </code></pre></div>
 </div>
 </body>

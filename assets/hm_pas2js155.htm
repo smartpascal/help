@@ -50,12 +50,12 @@ width: 100%;background: #e18728;font-family: 'PT Serif', serif;padding: 5px 0;te
 <table style="width:100%;border:none;margin:0px;" cellspacing="0" cellpadding="0"> 
   <tr>
     <td class="topichead" style="text-align:left;">
-      <h1 class="p_Heading1" style="page-break-after: avoid;"><span class="f_Heading1">Pascal To Javascript</span></h1>
+      <h1 class="p_Heading1" style="page-break-after: avoid;"><span class="f_Heading1">for bounds change | loop for</span></h1>
     </td>
     <td class="topichead" id="idnav">
-      <a href="hm_pas2js015.htm"><span class="hmbtnprev"></span></a>
+      <a href="hm_pas2js154.htm"><span class="hmbtnprev"></span></a>
       <a href="index.htm" title="Parent Chapter"><span class="hmbtntop"></span></a>
-      <a href="hm_pas2js017.htm"><span class="hmbtnnext"></span></a>
+      <a href="hm_pas2js156.htm"><span class="hmbtnnext"></span></a>
      </td>  
   </tr>  
 </table>
@@ -66,22 +66,69 @@ width: 100%;background: #e18728;font-family: 'PT Serif', serif;padding: 5px 0;te
 <table style="width:100%;border:none;margin:10px;" cellspacing="0" cellpadding="0">
   <tr>
 	<td>
-	
-	{ Description here...}
+	for bounds change | for..to | for..downto
 	</td>
   </tr>
 </table>
 	
 <pre><span id="code" class="language-css">Smart pascal source code</span><br>
 <code class="delphi" style="background-color: #FFFEEB;">
-{paste PASCAL code here...}
+  var
+    i, lo, hi: Integer;
+
+  lo := 1;
+  hi := 3;
+  for i := lo to hi do
+  begin
+    WriteLn(i);
+    hi := 1;
+    lo := 3;
+  end;
+
+  lo := 1;
+  hi := 3;
+  for i := hi downto lo do
+  begin
+    WriteLn(i);
+    hi := 1;
+    lo := 3;
+  end;
+
+  { <<< CONSOLE OUTPUTS >>>
+    1
+    2
+    3
+    3
+    2
+    1
+  }
 
 </code></pre>
 <button type="button" id="checkoutbutton">Show JS code</button>
 <div id="widget" style="display:none;">
 <pre>
 <code class="javascript">
-{paste JS code here...}
+      var i = 0;
+      var lo = 0;
+      var hi = 0;
+      lo = 1;
+      hi = 3;
+      var $temp1;
+      for(i=lo,$temp1=hi;i<=$temp1;i++) {
+         WriteLn(i);
+         hi = 1;
+         lo = 3;
+      }
+      lo = 1;
+      hi = 3;
+      var $temp2;
+      for(i=hi,$temp2=lo;i>=$temp2;i--) {
+         WriteLn(i);
+         hi = 1;
+         lo = 3;
+      }
+   }
+
 
 </code></pre></div>
 </div>

@@ -50,12 +50,12 @@ width: 100%;background: #e18728;font-family: 'PT Serif', serif;padding: 5px 0;te
 <table style="width:100%;border:none;margin:0px;" cellspacing="0" cellpadding="0"> 
   <tr>
     <td class="topichead" style="text-align:left;">
-      <h1 class="p_Heading1" style="page-break-after: avoid;"><span class="f_Heading1">Pascal To Javascript</span></h1>
+      <h1 class="p_Heading1" style="page-break-after: avoid;"><span class="f_Heading1">for in Array of TProcedure</span></h1>
     </td>
     <td class="topichead" id="idnav">
-      <a href="hm_pas2js015.htm"><span class="hmbtnprev"></span></a>
+      <a href="hm_pas2js158.htm"><span class="hmbtnprev"></span></a>
       <a href="index.htm" title="Parent Chapter"><span class="hmbtntop"></span></a>
-      <a href="hm_pas2js017.htm"><span class="hmbtnnext"></span></a>
+      <a href="hm_pas2js160.htm"><span class="hmbtnnext"></span></a>
      </td>  
   </tr>  
 </table>
@@ -66,22 +66,72 @@ width: 100%;background: #e18728;font-family: 'PT Serif', serif;padding: 5px 0;te
 <table style="width:100%;border:none;margin:10px;" cellspacing="0" cellpadding="0">
   <tr>
 	<td>
-	
-	{ Description here...}
+	for in Array of TProcedure
 	</td>
   </tr>
 </table>
 	
 <pre><span id="code" class="language-css">Smart pascal source code</span><br>
 <code class="delphi" style="background-color: #FFFEEB;">
-{paste PASCAL code here...}
+Type
+  TProc = Procedure;
+
+procedure Hello;
+begin
+  WriteLn('Hello');
+end;
+
+procedure World;
+begin
+  WriteLn('World');
+end;
+
+{ main.pas }
+procedure TApplication.RunApp;
+var
+  arr: Array Of TProc;
+  proc: TProc;
+
+Begin
+  arr.Add(Hello);
+  arr.Add(World);
+  arr.Add(World);
+  arr.Add(Hello);
+
+  For proc In arr Do
+    proc;
+
+  { <<< CONSOLE OUTPUTS >>>
+    Hello
+    World
+    World
+    Hello
+  }
 
 </code></pre>
 <button type="button" id="checkoutbutton">Show JS code</button>
 <div id="widget" style="display:none;">
 <pre>
 <code class="javascript">
-{paste JS code here...}
+      var arr = [];
+      var proc = null;
+      var a$1 = 0;
+      arr.push(Hello);
+      arr.push(World);
+      arr.push(World);
+      arr.push(Hello);
+      var $temp1;
+      for(a$1=0,$temp1=arr.length;a$1<$temp1;a$1++) {
+         proc = arr[a$1];
+         proc();
+      }
+	  
+function World() {
+   WriteLn("World");
+};
+function Hello() {
+   WriteLn("Hello");
+};  
 
 </code></pre></div>
 </div>

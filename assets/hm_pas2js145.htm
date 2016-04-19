@@ -50,12 +50,12 @@ width: 100%;background: #e18728;font-family: 'PT Serif', serif;padding: 5px 0;te
 <table style="width:100%;border:none;margin:0px;" cellspacing="0" cellpadding="0"> 
   <tr>
     <td class="topichead" style="text-align:left;">
-      <h1 class="p_Heading1" style="page-break-after: avoid;"><span class="f_Heading1">Pascal To Javascript</span></h1>
+      <h1 class="p_Heading1" style="page-break-after: avoid;"><span class="f_Heading1">Exit | Case Of</span></h1>
     </td>
     <td class="topichead" id="idnav">
-      <a href="hm_pas2js015.htm"><span class="hmbtnprev"></span></a>
+      <a href="hm_pas2js144.htm"><span class="hmbtnprev"></span></a>
       <a href="index.htm" title="Parent Chapter"><span class="hmbtntop"></span></a>
-      <a href="hm_pas2js017.htm"><span class="hmbtnnext"></span></a>
+      <a href="hm_pas2js146.htm"><span class="hmbtnnext"></span></a>
      </td>  
   </tr>  
 </table>
@@ -66,22 +66,62 @@ width: 100%;background: #e18728;font-family: 'PT Serif', serif;padding: 5px 0;te
 <table style="width:100%;border:none;margin:10px;" cellspacing="0" cellpadding="0">
   <tr>
 	<td>
-	
-	{ Description here...}
+	Exit | Case Of
 	</td>
   </tr>
 </table>
 	
 <pre><span id="code" class="language-css">Smart pascal source code</span><br>
 <code class="delphi" style="background-color: #FFFEEB;">
-{paste PASCAL code here...}
+  procedure Test(s: String);
+  begin
+    case s of
+      't':
+        begin
+          WriteLn('here');
+          exit;
+        end;
+      'r':  ;
+    else
+      WriteLn('there');
+      exit;
+    end;
+    WriteLn('done');
+  end;
+
+  Test('a');
+  Test('r');
+  Test('t');
+
+  { <<< CONSOLE OUTPUTS >>>
+    there
+    done
+    here
+  }
 
 </code></pre>
 <button type="button" id="checkoutbutton">Show JS code</button>
 <div id="widget" style="display:none;">
 <pre>
 <code class="javascript">
-{paste JS code here...}
+      function Test(s) {
+         switch (s) {
+            case "t" :
+               WriteLn("here");
+               return;
+               break;
+            case "r" :
+               /* null */
+                break;
+            default :
+               WriteLn("there");
+               return;
+         }
+         WriteLn("done");
+      };
+      Test("a");
+      Test("r");
+      Test("t");
 
 </code></pre></div>
 </div>
