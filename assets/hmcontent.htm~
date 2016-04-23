@@ -628,8 +628,7 @@ Custom Array type</span></a></li>
 
 <li class="heading1" id="i5" data-bg="ibook.png;ibookopen.png" data-img="feature-02-get-started.jpg" style="background:url(ibookopen.png) no-repeat;cursor:pointer;padding-left:24px" onclick="return clicked(this,event)"><a class="heading1" id="a5" href="hm_datatypes.htm" target="hmcontent"><span class="heading1" id="s5" ondblclick="return dblclicked(this)">Base Types</span></a>
 <ul id="ul5" style="list-style-type:none">
-<li class="heading2" id="i5.1" style="background:url(ipage.png) no-repeat;padding-left:24px" onclick="return clicked(this,event)"><a class="heading2" id="a5.1" href="hm_tobject.htm
-" target="hmcontent"><span class="heading2" id="s5.1">TObject</span></a>
+<li class="heading2" id="i5.1" style="background:url(ipage.png) no-repeat;padding-left:24px" onclick="return clicked(this,event)"><a class="heading2" id="a5.1" href="TW3TObject.htm" target="hmcontent"><span class="heading2" id="s5.1">TObject</span></a>
 </li>
 <li class="heading2" id="i5.2" style="background:url(ipage.png) no-repeat;padding-left:24px" onclick="return clicked(this,event)"><a class="heading2" id="a5.2" href="hm_integer.htm" target="hmcontent"><span class="heading2" id="s5.2">Integer</span></a>
 </li>
